@@ -1,16 +1,95 @@
-@import './fonts.css';
-@import './buttons.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Configuración de fuentes */
+@font-face {
+  font-family: "DM Sans";
+  src: url("@/assets/fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: "DM Sans";
+  src: url("@/assets/fonts/DM_Sans/DMSans-Italic-VariableFont_opsz,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+/* Estilos base */
 @layer base {
-    body {
-        @apply font-sans bg-gray-100;
-    }
-    h1 {
-        @apply text-5xl font-bold text-primary;
-    }
+  html {
+    font-family: "DM Sans", system-ui, sans-serif;
+  }
+}
+
+/* Sistema de Tipografía - Compatibilidad con clases de Tailwind */
+@layer components {
+  /* H1 Header - Compatibilidad con clases Tailwind */
+  .typography-h1 {
+    @apply font-medium;
+    font-size: clamp(48px, 5vw, 64px);
+    line-height: clamp(58px, 6vw, 78px);
+  }
+
+  /* H2 Header - Compatibilidad con clases Tailwind */
+  .typography-h2 {
+    @apply font-medium;
+    font-size: clamp(40px, 4.5vw, 52px);
+    line-height: clamp(48px, 5.2vw, 56px);
+  }
+
+  /* H3 Header - Compatibilidad con clases Tailwind */
+  .typography-h3 {
+    @apply font-medium;
+    font-size: clamp(32px, 3.6vw, 40px);
+    line-height: clamp(40px, 4.4vw, 46px);
+  }
+
+  /* H4 Header - Compatibilidad con clases Tailwind */
+  .typography-h4 {
+    @apply font-medium;
+    font-size: clamp(24px, 2.8vw, 32px);
+    line-height: clamp(36px, 3.8vw, 46px);
+  }
+
+  /* H5 Header - Compatibilidad con clases Tailwind */
+  .typography-h5 {
+    @apply font-medium;
+    font-size: clamp(20px, 2.4vw, 24px);
+    line-height: 36px;
+  }
+
+  /* H6 Header - Compatibilidad con clases Tailwind */
+  .typography-h6 {
+    @apply font-medium;
+    font-size: clamp(18px, 2vw, 20px);
+    line-height: clamp(32px, 3.6vw, 36px);
+  }
+
+  /* P Body - Compatibilidad con clases Tailwind */
+  .typography-body {
+    @apply font-medium;
+    font-size: 18px;
+    line-height: 36px;
+  }
+
+  /* Small - Compatibilidad con clases Tailwind */
+  .typography-small {
+    @apply font-medium;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  /* Componentes existentes */
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 border border-gray-200;
+  }
 }

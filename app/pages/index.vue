@@ -1,23 +1,12 @@
 <script setup lang="ts">
-import {useI18n} from 'vue-i18n'
-import {useLocalePath} from '#i18n'
-
-const {t, locales, setLocale} = useI18n();
-const localePath = useLocalePath()
+defineOptions({
+  name: 'HomePage',
+});
 </script>
 
 <template>
-<!--  <div>-->
-<!--    <button v-for="locale in locales" :key="locale.code" @click="setLocale(locale.code)">-->
-<!--      {{ locale.code }}-->
-<!--    </button>-->
-<!--    <h1>{{ t('home.welcome') }}</h1>-->
-<!--  </div>-->
-
-<!--  <div>-->
-<!--    <NuxtLink :to="localePath('about')">Ir a About</NuxtLink>-->
-<!--    <NuxtLink :to="localePath('blog')">Ir a About</NuxtLink>-->
-<!--    <NuxtLink :to="localePath('calculators')">Ir a Calculadoras</NuxtLink>-->
-<!--    <NuxtLink :to="localePath('calculators-imputed-income')">Ir a calculadora de imputed</NuxtLink>-->
-<!--  </div>-->
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="mb-8 text-center text-3xl font-bold">Welcome to IberianTax</h1>
+    <p class="text-center text-lg">Easy tax returns for non-residents in Spain</p>
+  </div>
 </template>

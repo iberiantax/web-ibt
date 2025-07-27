@@ -1,16 +1,20 @@
 <script setup lang="ts">
-import AppHeader from "~/components/shared/app/AppHeader.vue";
-import AppFooter from "~/components/shared/app/AppFooter.vue";
+defineOptions({
+  name: 'DefaultLayout',
+});
+
+import AppHeader from '~/components/layout/AppHeader.vue';
+import AppFooter from '~/components/layout/AppFooter.vue';
 </script>
 
 <template>
-  <div>
-    <app-header/>
+  <div class="min-h-screen flex flex-col bg-neutral-100">
+    <app-header />
 
-    <main>
+    <main class="flex-1 bg-neutral-100">
       <slot />
     </main>
 
-    <app-footer/>
+    <app-footer />
   </div>
 </template>
