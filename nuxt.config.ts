@@ -1,8 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
-  modules: ['@nuxtjs/i18n'],
+    ssr: true,
+    compatibilityDate: '2025-07-15',
+    devtools: {enabled: true},
+    modules: [
+        '@nuxtjs/i18n',
+        '@nuxtjs/sitemap',
+        '@nuxtjs/robots',
+        '@nuxtjs/tailwindcss'
+    ],
+    css: ['@/assets/css/main.css'],
+    site: {
+        url: 'https://www.iberiantax.com',
+        name: 'IberianTax'
+    },
     i18n: {
         locales: [
             {
@@ -18,6 +29,18 @@ export default defineNuxtConfig({
                 file: 'es.json',
             },
         ],
+        strategy: 'prefix_except_default',
         defaultLocale: 'en',
+        customRoutes: 'config',
+        pages: {
+            about: {
+                en: '/about-us',
+                es: '/sobre-nosotros',
+            },
+            blog: {
+                en: '/blog',
+                es: '/blog',
+            }
+        }
     },
 })
