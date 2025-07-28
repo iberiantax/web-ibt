@@ -69,8 +69,12 @@ const cardClasses = computed(() => {
 
   // Clases por tipo
   const typeClasses = {
-    default: 'flex flex-col items-start p-6 h-auto bg-blue-50 rounded-3xl max-w-sm',
-    'default-white': 'flex flex-col items-start p-6 h-auto bg-white rounded-3xl max-w-sm',
+    default: props.fullWidth
+      ? 'flex flex-col items-start p-10 h-auto bg-blue-50 rounded-3xl w-full'
+      : 'flex flex-col items-start p-10 h-auto bg-blue-50 rounded-3xl max-w-sm',
+    'default-white': props.fullWidth
+      ? 'flex flex-col items-start p-10 h-auto bg-white rounded-3xl w-full'
+      : 'flex flex-col items-start p-10 h-auto bg-white rounded-3xl max-w-sm',
     blog: 'flex flex-col items-start p-0 relative w-full max-w-md h-auto bg-white rounded-3xl',
     'case-studies': 'flex flex-col items-start p-6 w-full max-w-lg h-auto bg-white rounded-3xl',
     review: 'flex flex-col items-start p-6 w-full max-w-md h-auto bg-white rounded-3xl',
@@ -106,7 +110,7 @@ const handleClick = (event: MouseEvent) => {
     <!-- Default Type -->
     <div v-if="type === 'default'" class="flex h-full w-full flex-col items-start">
       <!-- Icon -->
-      <div class="mb-4">
+      <div class="mb-8">
         <svg class="h-8 w-8 text-[#1364B3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             stroke-linecap="round"
@@ -118,16 +122,16 @@ const handleClick = (event: MouseEvent) => {
       </div>
 
       <!-- Title -->
-      <div class="w-full">
-        <h3 class="mb-3 text-lg font-semibold leading-tight tracking-tight text-[#1364B3]">
+      <div class="mb-6 w-full">
+        <h3 class="text-lg font-semibold leading-tight tracking-tight text-[#1364B3]">
           {{ title }}
         </h3>
       </div>
 
       <!-- Description -->
-      <div class="w-full">
+      <div class="mb-8 w-full">
         <p v-if="subtitle" class="mb-3 text-sm font-medium text-gray-600">{{ subtitle }}</p>
-        <p class="mb-4 text-base leading-relaxed text-gray-700">{{ description }}</p>
+        <p class="text-base leading-relaxed text-gray-700">{{ description }}</p>
       </div>
 
       <!-- Button -->

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface Props {
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
@@ -39,6 +39,8 @@ const buttonClasses = computed(() => {
       'bg-white text-[#1364B3] border border-[#1364B3] hover:bg-blue-50 focus:ring-[#1364B3]',
     tertiary: 'bg-gray-100 text-gray-700 hover:bg-gray-200 focus:ring-gray-500',
     ghost: 'text-[#1364B3] border border-[#1364B3] hover:bg-blue-50 focus:ring-[#1364B3]',
+    outline:
+      'bg-transparent text-gray-700 border border-gray-900 hover:bg-gray-50 focus:ring-gray-500',
   };
 
   return [...baseClasses, sizeClasses[props.size], variantClasses[props.variant]].join(' ');
