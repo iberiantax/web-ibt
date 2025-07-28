@@ -998,9 +998,7 @@
 
         <!-- BaseSegmentedControl -->
         <section class="mb-8">
-          <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">
-            BaseSegmented
-          </h3>
+          <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">BaseSegmented</h3>
           <!-- Light Variant -->
           <div class="mb-6">
             <h4 class="mb-2 text-lg font-medium">Light Variant</h4>
@@ -1098,6 +1096,131 @@
             />
           </div>
         </section>
+
+        <!-- BaseStepperHorizontal -->
+        <section class="mb-8">
+          <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">
+            BaseStepperHorizontal
+          </h3>
+
+          <!-- Ejemplo con razones comunes -->
+          <div class="mb-6">
+            <h4 class="mb-2 text-lg font-medium">Common Reasons Example</h4>
+            <BaseStepperHorizontal
+              :steps="[
+                {
+                  number: 1,
+                  title: 'Ownership Period Errors',
+                  description:
+                    'Incorrect calculation of the ownership period, leading to taxes being paid for periods when you didn\'t actually own the property.',
+                },
+                {
+                  number: 2,
+                  title: 'Incorrect Tax Rate',
+                  description:
+                    'Using the standard 24% rate instead of the reduced 19% rate for EU/EEA residents, or vice versa.',
+                },
+                {
+                  number: 3,
+                  title: 'Incorrect Income Basis',
+                  description:
+                    'Using the wrong percentage (2% vs 1.1%) of the cadastral value to calculate the imputed income.',
+                },
+              ]"
+            />
+          </div>
+        </section>
+
+        <!-- BaseBanner -->
+        <section class="mb-8">
+          <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">BaseBanner</h3>
+
+          <!-- Banner por defecto -->
+          <div class="mb-6">
+            <h4 class="mb-2 text-lg font-medium">Default Banner</h4>
+            <BaseBanner />
+          </div>
+
+          <!-- Banner con imagen -->
+          <div class="mb-6">
+            <h4 class="mb-2 text-lg font-medium">Banner with Image</h4>
+            <BaseBanner image="/images/hero/FrameHero.png" imageAlt="Modern living room" />
+          </div>
+
+          <!-- Banner con fondo personalizado -->
+          <div class="mb-6">
+            <h4 class="mb-2 text-lg font-medium">Custom Background</h4>
+            <BaseBanner
+              backgroundColor="bg-green-100"
+              title="Custom Title"
+              description="This is a custom banner with different background color"
+              buttonText="Custom Button"
+            />
+          </div>
+
+       
+
+          <!-- Banner solo con título -->
+          <div class="mb-6">
+            <h4 class="mb-2 text-lg font-medium">Banner with Title Only</h4>
+            <BaseBanner
+              :showDescription="false"
+              title="This banner only shows the title"
+              buttonText="Title Only"
+            />
+          </div>
+        </section>
+
+        <!-- BaseStepperVertical -->
+        <section class="mb-8">
+          <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">
+            BaseStepperVertical
+          </h3>
+          <!-- Ejemplo con pasos de proceso -->
+          <div class="mb-6">
+            <h4 class="mb-2 text-lg font-medium">How It Works Example</h4>
+            <BaseStepperVertical
+              title="HOW IT WORKS!"
+              :steps="[
+                {
+                  number: 1,
+                  title: 'Register for free',
+                  description:
+                    'Create an account in seconds. No credit card required. Fill in your personal details.',
+                },
+                {
+                  number: 2,
+                  title: 'Fill out your information',
+                  description:
+                    'Answer a few simple questions about your property and ownership details.',
+                },
+                {
+                  number: 3,
+                  title: 'Choose filing and payment method',
+                  description:
+                    'Answer a few simple questions about your property and ownership details.',
+                },
+              ]"
+            />
+          </div>
+        </section>
+
+        <!-- BaseInfoCard -->
+        <section class="mb-8">
+          <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">BaseInfoCard</h3>
+          <!-- Ejemplo con imagen -->
+          <div class="mb-6">
+            <h4 class="mb-2 text-lg font-medium">Info Card with Image</h4>
+            <BaseInfoCard
+              title="Protect your return"
+              description="Add optional audit protection services to your tax return and enjoy the piece of mind knowing that Expatfile has your back in the case of an IRS audit."
+              buttonText="Get started"
+              image="/images/hero/FrameHero.png"
+              imageAlt="Protection services"
+            />
+          </div>
+        
+        </section>
       </div>
     </div>
   </div>
@@ -1114,6 +1237,10 @@ import {
   BaseLink,
   BaseSegmentedControl,
   BaseCard,
+  BaseBanner,
+  BaseStepperHorizontal,
+  BaseStepperVertical,
+  BaseInfoCard,
 } from '~/components/shared/ui';
 
 // Estado reactivo para los dropdowns
