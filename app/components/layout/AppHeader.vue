@@ -14,6 +14,20 @@ const isMobileServicesOpen = ref(false);
 const isMobileResourcesOpen = ref(false);
 const isMobileLanguageOpen = ref(false);
 
+// Función para cerrar todos los dropdowns excepto el especificado
+const closeOtherDropdowns = (dropdownToKeep: string) => {
+  if (dropdownToKeep !== 'services') isServicesOpen.value = false;
+  if (dropdownToKeep !== 'resources') isResourcesOpen.value = false;
+  if (dropdownToKeep !== 'language') isLanguageOpen.value = false;
+};
+
+// Función para cerrar todos los dropdowns móviles excepto el especificado
+const closeOtherMobileDropdowns = (dropdownToKeep: string) => {
+  if (dropdownToKeep !== 'services') isMobileServicesOpen.value = false;
+  if (dropdownToKeep !== 'resources') isMobileResourcesOpen.value = false;
+  if (dropdownToKeep !== 'language') isMobileLanguageOpen.value = false;
+};
+
 // Toggle menú móvil
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
@@ -24,6 +38,34 @@ const toggleMobileMenu = () => {
     isMobileLanguageOpen.value = false;
   }
 };
+
+// Cerrar todos los dropdowns cuando se hace click fuera
+const closeAllDropdowns = () => {
+  isServicesOpen.value = false;
+  isResourcesOpen.value = false;
+  isLanguageOpen.value = false;
+};
+
+// Cerrar todos los dropdowns móviles
+const closeAllMobileDropdowns = () => {
+  isMobileServicesOpen.value = false;
+  isMobileResourcesOpen.value = false;
+  isMobileLanguageOpen.value = false;
+};
+
+// Event listener para cerrar dropdowns al hacer click fuera
+onMounted(() => {
+  document.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement;
+    const header = document.querySelector('header');
+
+    // Si el click no está dentro del header, cerrar todos los dropdowns
+    if (header && !header.contains(target)) {
+      closeAllDropdowns();
+      closeAllMobileDropdowns();
+    }
+  });
+});
 </script>
 
 <template>
@@ -60,8 +102,12 @@ const toggleMobileMenu = () => {
             <!-- Services Dropdown -->
             <div class="relative">
               <button
-                @click="isServicesOpen = !isServicesOpen"
-                @blur="setTimeout(() => (isServicesOpen = false), 150)"
+                @click="
+                  () => {
+                    closeOtherDropdowns('services');
+                    isServicesOpen = !isServicesOpen;
+                  }
+                "
                 class="flex items-center text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-[#1364B3]"
               >
                 Services
@@ -96,8 +142,12 @@ const toggleMobileMenu = () => {
             <!-- Resources Dropdown -->
             <div class="relative">
               <button
-                @click="isResourcesOpen = !isResourcesOpen"
-                @blur="setTimeout(() => (isResourcesOpen = false), 150)"
+                @click="
+                  () => {
+                    closeOtherDropdowns('resources');
+                    isResourcesOpen = !isResourcesOpen;
+                  }
+                "
                 class="flex items-center text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-[#1364B3]"
               >
                 Resources
@@ -132,8 +182,12 @@ const toggleMobileMenu = () => {
             <!-- Language Selector -->
             <div class="relative">
               <button
-                @click="isLanguageOpen = !isLanguageOpen"
-                @blur="setTimeout(() => (isLanguageOpen = false), 150)"
+                @click="
+                  () => {
+                    closeOtherDropdowns('language');
+                    isLanguageOpen = !isLanguageOpen;
+                  }
+                "
                 class="flex items-center text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-[#1364B3]"
               >
                 EN
@@ -206,7 +260,12 @@ const toggleMobileMenu = () => {
             <!-- Mobile Services -->
             <div class="space-y-3">
               <button
-                @click="isMobileServicesOpen = !isMobileServicesOpen"
+                @click="
+                  () => {
+                    closeOtherMobileDropdowns('services');
+                    isMobileServicesOpen = !isMobileServicesOpen;
+                  }
+                "
                 class="flex w-full items-center justify-between text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-[#1364B3]"
               >
                 <span>Services</span>
@@ -243,7 +302,12 @@ const toggleMobileMenu = () => {
             <!-- Mobile Resources -->
             <div class="space-y-3">
               <button
-                @click="isMobileResourcesOpen = !isMobileResourcesOpen"
+                @click="
+                  () => {
+                    closeOtherMobileDropdowns('resources');
+                    isMobileResourcesOpen = !isMobileResourcesOpen;
+                  }
+                "
                 class="flex w-full items-center justify-between text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-[#1364B3]"
               >
                 <span>Resources</span>
@@ -280,7 +344,12 @@ const toggleMobileMenu = () => {
             <!-- Mobile Language -->
             <div class="space-y-3">
               <button
-                @click="isMobileLanguageOpen = !isMobileLanguageOpen"
+                @click="
+                  () => {
+                    closeOtherMobileDropdowns('language');
+                    isMobileLanguageOpen = !isMobileLanguageOpen;
+                  }
+                "
                 class="flex w-full items-center justify-between text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-[#1364B3]"
               >
                 <span>Language</span>
