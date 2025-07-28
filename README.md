@@ -172,8 +172,6 @@ app/components/
 │   ├── AppFooter.vue
 │   └── AppHeader.vue
 └── shared/
-    ├── buttons/
-    │   └── BaseButton.vue
     ├── icons/
     │   ├── FacebookIcon.vue
     │   ├── GoogleLogo.vue
@@ -183,21 +181,90 @@ app/components/
     ├── logos/
     │   └── logo.vue
     └── ui/
-        ├── BaseAccordion.vue
-        ├── BaseBadge.vue
-        ├── BaseCard.vue
-        ├── BaseCarousel.vue
-        ├── BaseCheckbox.vue
-        ├── BaseContainer.vue
-        ├── BaseDropdown.vue
-        ├── BaseInput.vue
-        ├── BaseLink.vue
-        ├── BaseSearch.vue
-        ├── BaseSegmentedControl.vue
-        ├── BaseStepper.vue
-        ├── BaseTextarea.vue
+        ├── banners/
+        │   ├── BaseBanner.vue
+        │   └── index.ts
+        ├── buttons/
+        │   ├── BaseButton.vue
+        │   └── index.ts
+        ├── cards/
+        │   ├── BaseCard.vue
+        │   ├── BaseInfoCard.vue
+        │   ├── BaseReportsCard.vue
+        │   └── index.ts
+        ├── feedback/
+        │   ├── BaseSearch.vue
+        │   ├── BaseSegmentedControl.vue
+        │   └── index.ts
+        ├── inputs/
+        │   ├── BaseCheckbox.vue
+        │   ├── BaseInput.vue
+        │   ├── BaseTextarea.vue
+        │   └── index.ts
+        ├── layout/
+        │   ├── BaseAccordion.vue
+        │   ├── BaseBadge.vue
+        │   ├── BaseCarousel.vue
+        │   ├── BaseContainer.vue
+        │   └── index.ts
+        ├── navigation/
+        │   ├── BaseDropdown.vue
+        │   ├── BaseLink.vue
+        │   └── index.ts
+        ├── steppers/
+        │   ├── BaseStepper.vue
+        │   ├── BaseStepperHorizontal.vue
+        │   ├── BaseStepperVertical.vue
+        │   └── index.ts
         └── index.ts
 ```
+
+### Componentes Base del Sistema de Diseño
+
+#### Botones (`ui/buttons/`)
+
+- **BaseButton**: Botón reutilizable con variantes primary, secondary, tertiary, ghost, outline
+- Tamaños: sm, md, lg
+- Estados: disabled, loading, fullWidth
+
+#### Tarjetas (`ui/cards/`)
+
+- **BaseCard**: Contenedor de tarjeta con variantes elevated, outlined, flat
+- **BaseInfoCard**: Tarjeta informativa especializada
+- **BaseReportsCard**: Tarjeta para reportes y datos
+
+#### Inputs (`ui/inputs/`)
+
+- **BaseInput**: Input reutilizable con tipos text, email, password, number, tel, url, search
+- **BaseTextarea**: Área de texto multilínea
+- **BaseCheckbox**: Checkbox con estados personalizados
+
+#### Navegación (`ui/navigation/`)
+
+- **BaseLink**: Enlaces con variantes y estados
+- **BaseDropdown**: Menús desplegables
+
+#### Layout (`ui/layout/`)
+
+- **BaseContainer**: Contenedor principal con maxWidth, padding, background
+- **BaseAccordion**: Acordeón con animaciones
+- **BaseBadge**: Badges y ratings
+- **BaseCarousel**: Carrusel de elementos
+
+#### Feedback (`ui/feedback/`)
+
+- **BaseSearch**: Componente de búsqueda
+- **BaseSegmentedControl**: Control segmentado
+
+#### Banners (`ui/banners/`)
+
+- **BaseBanner**: Alertas y notificaciones con variantes info, success, warning, error
+
+#### Steppers (`ui/steppers/`)
+
+- **BaseStepper**: Stepper vertical
+- **BaseStepperHorizontal**: Stepper horizontal
+- **BaseStepperVertical**: Stepper vertical especializado
 
 ### Páginas Disponibles
 
@@ -207,7 +274,8 @@ app/pages/
 ├── about.vue (Sobre Nosotros)
 ├── design-system.vue (Sistema de Diseño)
 ├── blog/
-│   └── index.vue
+│   ├── index.vue
+│   └── how-to-recover-overpaid-taxes.vue
 └── calculators/
     ├── index.vue
     └── imputed-income.vue

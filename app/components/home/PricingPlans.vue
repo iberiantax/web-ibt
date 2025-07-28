@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Check } from 'lucide-vue-next';
-import BaseCard from '~/components/shared/ui/BaseCard.vue';
-import BaseCarousel from '~/components/shared/ui/BaseCarousel.vue';
+import { BaseCard, BaseCarousel } from '~/components/shared/ui';
 
 interface Plan {
   title: string;

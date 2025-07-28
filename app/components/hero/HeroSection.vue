@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ArrowRight } from 'lucide-vue-next';
-import BaseButton from '~/components/shared/buttons/BaseButton.vue';
+import BaseButton from '~/components/shared/ui/buttons/BaseButton.vue';
 
 defineOptions({
   name: 'HeroSection',

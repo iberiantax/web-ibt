@@ -1,10 +1,27 @@
 # Componentes Base Reutilizables
 
-Esta carpeta contiene todos los componentes base reutilizables del sistema de diseño.
+Esta carpeta contiene todos los componentes base reutilizables del sistema de diseño, organizados por categorías funcionales.
+
+## Estructura de Carpetas
+
+```
+ui/
+├── banners/          # Alertas y notificaciones
+├── buttons/          # Botones y controles
+├── cards/            # Tarjetas y contenedores
+├── feedback/         # Componentes de feedback
+├── inputs/           # Campos de entrada
+├── layout/           # Componentes de layout
+├── navigation/       # Navegación y enlaces
+├── steppers/         # Steppers y progreso
+└── index.ts          # Exportaciones principales
+```
 
 ## Componentes Disponibles
 
-### 1. BaseButton
+### 1. Botones (`buttons/`)
+
+#### BaseButton
 
 Botón reutilizable con diferentes variantes y tamaños.
 
@@ -16,14 +33,28 @@ Botón reutilizable con diferentes variantes y tamaños.
 
 **Props:**
 
-- `variant`: 'primary' | 'secondary' | 'tertiary' | 'ghost'
+- `variant`: 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'outline'
 - `size`: 'sm' | 'md' | 'lg'
 - `type`: 'button' | 'submit' | 'reset'
 - `disabled`: boolean
 - `fullWidth`: boolean
 - `loading`: boolean
 
-### 2. BaseCard
+**Uso:**
+
+```vue
+<script setup>
+import { BaseButton } from '@/components/shared/ui';
+</script>
+
+<template>
+  <BaseButton variant="primary" size="md" :loading="isLoading"> Enviar </BaseButton>
+</template>
+```
+
+### 2. Tarjetas (`cards/`)
+
+#### BaseCard
 
 Contenedor de tarjeta con diferentes estilos.
 
@@ -41,93 +72,31 @@ Contenedor de tarjeta con diferentes estilos.
 - `hover`: boolean
 - `interactive`: boolean
 
-### 3. BaseText
+#### BaseInfoCard
 
-Componente de texto y headings reutilizable.
-
-```vue
-<BaseText as="h1" size="4xl" weight="bold" color="primary">
-  Título principal
-</BaseText>
-```
-
-**Props:**
-
-- `as`: 'p' | 'span' | 'div' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'label'
-- `size`: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl'
-- `weight`: 'thin' | 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold' | 'black'
-- `color`: 'default' | 'primary' | 'secondary' | 'muted' | 'success' | 'warning' | 'error' | 'white'
-- `align`: 'left' | 'center' | 'right' | 'justify'
-- `truncate`: boolean
-- `lineClamp`: number
-
-### 4. BaseLink
-
-Enlaces reutilizables con diferentes estilos.
+Tarjeta especializada para información.
 
 ```vue
-<BaseLink href="/about" variant="primary" external>
-  Enlace externo
-</BaseLink>
+<BaseInfoCard title="Información" icon="info">
+  Contenido informativo
+</BaseInfoCard>
 ```
 
-**Props:**
+#### BaseReportsCard
 
-- `href`: string
-- `variant`: 'default' | 'primary' | 'secondary' | 'underline' | 'button'
-- `size`: 'sm' | 'md' | 'lg'
-- `external`: boolean
-- `disabled`: boolean
-- `underline`: boolean
-
-### 5. BaseIcon
-
-Iconos reutilizables con diferentes tamaños y colores.
+Tarjeta especializada para reportes y datos.
 
 ```vue
-<BaseIcon name="check" size="md" color="success" />
+<BaseReportsCard title="Reporte Fiscal" :data="reportData">
+  Datos del reporte
+</BaseReportsCard>
 ```
 
-**Props:**
+### 3. Inputs (`inputs/`)
 
-- `name`: string (nombre del icono)
-- `size`: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
-- `color`: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'white' | 'gray'
-- `strokeWidth`: number
-- `fill`: 'none' | 'currentColor'
+#### BaseInput
 
-**Iconos disponibles:**
-
-- check, close, arrowRight, arrowLeft, arrowUp, arrowDown
-- plus, minus, search, star, heart, user
-- menu, home, settings, info, warning, error, success
-
-### 6. BaseBadge
-
-Badges y ratings reutilizables.
-
-```vue
-<BaseBadge variant="success" size="md" dot>
-  Badge con punto
-</BaseBadge>
-
-<BaseBadge :rating="4.5" :maxRating="5" showValue />
-```
-
-**Props:**
-
-- `variant`: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'info'
-- `size`: 'sm' | 'md' | 'lg'
-- `rounded`: boolean
-- `dot`: boolean
-- `removable`: boolean
-- `rating`: number
-- `maxRating`: number
-- `showValue`: boolean
-
-### 7. BaseInput
-
-Inputs reutilizables con diferentes tipos y estados.
+Input reutilizable con diferentes tipos y estados.
 
 ```vue
 <BaseInput
@@ -157,7 +126,80 @@ Inputs reutilizables con diferentes tipos y estados.
 - `rightIcon`: string
 - `clearable`: boolean
 
-### 8. BaseAccordion
+#### BaseTextarea
+
+Área de texto multilínea.
+
+```vue
+<BaseTextarea v-model="content" placeholder="Escribe tu mensaje..." rows="4" maxLength="500" />
+```
+
+#### BaseCheckbox
+
+Checkbox con estados personalizados.
+
+```vue
+<BaseCheckbox v-model="checked" label="Acepto los términos" required />
+```
+
+### 4. Navegación (`navigation/`)
+
+#### BaseLink
+
+Enlaces reutilizables con diferentes estilos.
+
+```vue
+<BaseLink href="/about" variant="primary" external>
+  Enlace externo
+</BaseLink>
+```
+
+**Props:**
+
+- `href`: string
+- `variant`: 'default' | 'primary' | 'secondary' | 'underline' | 'button'
+- `size`: 'sm' | 'md' | 'lg'
+- `external`: boolean
+- `disabled`: boolean
+- `underline`: boolean
+
+#### BaseDropdown
+
+Menús desplegables.
+
+```vue
+<BaseDropdown :items="menuItems" trigger="click">
+  <template #trigger>
+    <BaseButton>Menú</BaseButton>
+  </template>
+</BaseDropdown>
+```
+
+### 5. Layout (`layout/`)
+
+#### BaseContainer
+
+Contenedor reutilizable para layouts.
+
+```vue
+<BaseContainer maxWidth="lg" padding="md" background="white">
+  Contenido del contenedor
+</BaseContainer>
+```
+
+**Props:**
+
+- `maxWidth`: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'full' | 'none'
+- `padding`: 'none' | 'sm' | 'md' | 'lg' | 'xl'
+- `margin`: 'none' | 'sm' | 'md' | 'lg' | 'xl'
+- `background`: 'transparent' | 'white' | 'gray' | 'primary' | 'secondary'
+- `border`: 'none' | 'top' | 'bottom' | 'all'
+- `rounded`: 'none' | 'sm' | 'md' | 'lg' | 'xl'
+- `shadow`: 'none' | 'sm' | 'md' | 'lg' | 'xl'
+- `center`: boolean
+- `fluid`: boolean
+
+#### BaseAccordion
 
 Acordeón reutilizable con animaciones.
 
@@ -175,7 +217,57 @@ Acordeón reutilizable con animaciones.
 - `size`: 'sm' | 'md' | 'lg'
 - `disabled`: boolean
 
-### 9. BaseSegmentedControl
+#### BaseBadge
+
+Badges y ratings reutilizables.
+
+```vue
+<BaseBadge variant="success" size="md" dot>
+  Badge con punto
+</BaseBadge>
+
+<BaseBadge :rating="4.5" :maxRating="5" showValue />
+```
+
+**Props:**
+
+- `variant`: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'info'
+- `size`: 'sm' | 'md' | 'lg'
+- `rounded`: boolean
+- `dot`: boolean
+- `removable`: boolean
+- `rating`: number
+- `maxRating`: number
+- `showValue`: boolean
+
+#### BaseCarousel
+
+Carrusel de elementos.
+
+```vue
+<BaseCarousel :items="carouselItems" autoplay>
+  <template #item="{ item }">
+    <div>{{ item.title }}</div>
+  </template>
+</BaseCarousel>
+```
+
+### 6. Feedback (`feedback/`)
+
+#### BaseSearch
+
+Componente de búsqueda.
+
+```vue
+<BaseSearch
+  v-model="searchQuery"
+  placeholder="Buscar..."
+  :results="searchResults"
+  @search="handleSearch"
+/>
+```
+
+#### BaseSegmentedControl
 
 Control segmentado reutilizable.
 
@@ -199,53 +291,9 @@ Control segmentado reutilizable.
 - `fullWidth`: boolean
 - `disabled`: boolean
 
-### 10. BaseContainer
+### 7. Banners (`banners/`)
 
-Contenedor reutilizable para layouts.
-
-```vue
-<BaseContainer maxWidth="lg" padding="md" background="white">
-  Contenido del contenedor
-</BaseContainer>
-```
-
-**Props:**
-
-- `maxWidth`: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'full' | 'none'
-- `padding`: 'none' | 'sm' | 'md' | 'lg' | 'xl'
-- `margin`: 'none' | 'sm' | 'md' | 'lg' | 'xl'
-- `background`: 'transparent' | 'white' | 'gray' | 'primary' | 'secondary'
-- `border`: 'none' | 'top' | 'bottom' | 'all'
-- `rounded`: 'none' | 'sm' | 'md' | 'lg' | 'xl'
-- `shadow`: 'none' | 'sm' | 'md' | 'lg' | 'xl'
-- `center`: boolean
-- `fluid`: boolean
-
-### 11. BaseBlock
-
-Bloque de contenido reutilizable.
-
-```vue
-<BaseBlock variant="elevated" padding="lg" interactive>
-  Contenido del bloque
-</BaseBlock>
-```
-
-**Props:**
-
-- `variant`: 'default' | 'elevated' | 'outlined' | 'flat'
-- `padding`: 'none' | 'sm' | 'md' | 'lg' | 'xl'
-- `margin`: 'none' | 'sm' | 'md' | 'lg' | 'xl'
-- `background`: 'transparent' | 'white' | 'gray' | 'primary' | 'secondary'
-- `border`: 'none' | 'top' | 'bottom' | 'all'
-- `rounded`: 'none' | 'sm' | 'md' | 'lg' | 'xl'
-- `shadow`: 'none' | 'sm' | 'md' | 'lg' | 'xl'
-- `hover`: boolean
-- `interactive`: boolean
-- `fullWidth`: boolean
-- `fullHeight`: boolean
-
-### 12. BaseBanner
+#### BaseBanner
 
 Banner y alertas reutilizables.
 
@@ -265,25 +313,120 @@ Banner y alertas reutilizables.
 - `fullWidth`: boolean
 - `rounded`: boolean
 
-## Uso
+### 8. Steppers (`steppers/`)
 
-Para usar estos componentes, importa los que necesites:
+#### BaseStepper
+
+Stepper vertical básico.
+
+```vue
+<BaseStepper :steps="steps" :currentStep="currentStep" @step-change="handleStepChange" />
+```
+
+#### BaseStepperHorizontal
+
+Stepper horizontal.
+
+```vue
+<BaseStepperHorizontal :steps="steps" :currentStep="currentStep" variant="elevated" />
+```
+
+#### BaseStepperVertical
+
+Stepper vertical especializado.
+
+```vue
+<BaseStepperVertical :steps="steps" :currentStep="currentStep" showProgress />
+```
+
+## Uso General
+
+### Importación Individual
 
 ```vue
 <script setup>
-import { BaseButton, BaseCard, BaseText } from '@/components/shared/base';
+import { BaseButton } from '@/components/shared/ui/buttons';
+import { BaseCard } from '@/components/shared/ui/cards';
+import { BaseInput } from '@/components/shared/ui/inputs';
 </script>
+```
 
+### Importación desde el Índice Principal
+
+```vue
+<script setup>
+import { BaseButton, BaseCard, BaseInput } from '@/components/shared/ui';
+</script>
+```
+
+### Ejemplo Completo
+
+```vue
 <template>
-  <BaseContainer>
-    <BaseCard>
-      <BaseText as="h1" size="2xl" weight="bold"> Título </BaseText>
-      <BaseButton variant="primary"> Botón </BaseButton>
+  <BaseContainer maxWidth="lg" padding="md">
+    <BaseCard variant="elevated" padding="lg">
+      <BaseText as="h1" size="2xl" weight="bold" color="primary"> Formulario de Contacto </BaseText>
+
+      <BaseInput v-model="email" type="email" placeholder="Tu email" label="Email" required />
+
+      <BaseTextarea v-model="message" placeholder="Tu mensaje" rows="4" />
+
+      <BaseButton variant="primary" :loading="isSubmitting"> Enviar </BaseButton>
     </BaseCard>
   </BaseContainer>
 </template>
+
+<script setup>
+import {
+  BaseContainer,
+  BaseCard,
+  BaseInput,
+  BaseTextarea,
+  BaseButton,
+} from '@/components/shared/ui';
+
+const email = ref('');
+const message = ref('');
+const isSubmitting = ref(false);
+</script>
 ```
 
 ## Colores del Sistema
 
 Los componentes utilizan el color primario `#1364B3` (azul) como color principal del sistema de diseño.
+
+### Paleta de Colores
+
+- **Primary**: `#1364B3` (Azul corporativo)
+- **Secondary**: `#6B7280` (Gris medio)
+- **Success**: `#10B981` (Verde)
+- **Warning**: `#F59E0B` (Amarillo)
+- **Error**: `#EF4444` (Rojo)
+- **Info**: `#3B82F6` (Azul claro)
+
+## Convenciones de Nomenclatura
+
+- Todos los componentes base empiezan con `Base`
+- Los nombres son en PascalCase
+- Las props siguen camelCase
+- Los eventos siguen kebab-case
+
+## Accesibilidad
+
+Todos los componentes incluyen:
+
+- Soporte para navegación por teclado
+- Atributos ARIA apropiados
+- Contraste de colores accesible
+- Estados de focus visibles
+- Textos alternativos para iconos
+
+## Responsive Design
+
+Los componentes están optimizados para:
+
+- Mobile First
+- Breakpoints personalizados
+- Espaciado adaptativo
+- Tipografía fluida
+- Touch-friendly en móviles

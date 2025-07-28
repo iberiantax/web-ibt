@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { computed } from 'vue';
+
 interface Props {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'outline';
   size?: 'sm' | 'md' | 'lg';

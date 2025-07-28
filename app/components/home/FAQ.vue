@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import BaseAccordion from '~/components/shared/ui/BaseAccordion.vue';
+import { BaseAccordion } from '~/components/shared/ui';
 
 interface FAQItem {
   question: string;

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import BaseCard from '~/components/shared/ui/BaseCard.vue';
+import { BaseCard } from '~/components/shared/ui';
 
 interface Review {
   description: string;

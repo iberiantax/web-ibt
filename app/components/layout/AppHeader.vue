@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ArrowRight, ChevronDown, Menu, X } from 'lucide-vue-next';
-import BaseButton from '~/components/shared/buttons/BaseButton.vue';
+import BaseButton from '~/components/shared/ui/buttons/BaseButton.vue';
 import Logo from '~/components/shared/logos/logo.vue';
 
 // Estado para dropdowns y menú móvil
