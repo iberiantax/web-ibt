@@ -116,26 +116,65 @@ onMounted(() => {
 
               <div
                 v-if="isServicesOpen"
-                class="absolute left-0 top-full mt-2 w-48 rounded-lg border border-neutral-200 bg-white py-2 shadow-elevation-2"
+                class="absolute left-0 top-full mt-2 w-96 rounded-lg border border-neutral-200 bg-white py-4 shadow-elevation-2"
               >
-                <NuxtLink
-                  to="/services/tax-returns"
-                  class="block px-4 py-2 text-base leading-6 text-neutral-700 hover:bg-neutral-50 hover:text-[#1364B3]"
-                >
-                  Tax Returns
-                </NuxtLink>
-                <NuxtLink
-                  to="/services/consulting"
-                  class="block px-4 py-2 text-base leading-6 text-neutral-700 hover:bg-neutral-50 hover:text-[#1364B3]"
-                >
-                  Consulting
-                </NuxtLink>
-                <NuxtLink
-                  to="/services/planning"
-                  class="block px-4 py-2 text-base leading-6 text-neutral-700 hover:bg-neutral-50 hover:text-[#1364B3]"
-                >
-                  Tax Planning
-                </NuxtLink>
+                <div class="grid grid-cols-2 gap-6 px-4">
+                  <div>
+                    <h3
+                      class="mb-3 border-b border-neutral-200 pb-1 text-sm font-medium text-neutral-500"
+                    >
+                      Por tipo
+                    </h3>
+                    <div class="space-y-2">
+                      <NuxtLink
+                        to="/services/tax-returns"
+                        class="block text-base leading-6 text-neutral-700 hover:text-[#1364B3]"
+                      >
+                        Tax Returns
+                      </NuxtLink>
+                      <NuxtLink
+                        to="/services/consulting"
+                        class="block text-base leading-6 text-neutral-700 hover:text-[#1364B3]"
+                      >
+                        Consulting
+                      </NuxtLink>
+                      <NuxtLink
+                        to="/services/planning"
+                        class="block text-base leading-6 text-neutral-700 hover:text-[#1364B3]"
+                      >
+                        Tax Planning
+                      </NuxtLink>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3
+                      class="mb-3 border-b border-neutral-200 pb-1 text-sm font-medium text-neutral-500"
+                    >
+                      Por temas
+                    </h3>
+                    <div class="space-y-2">
+                      <NuxtLink
+                        to="/services/individual"
+                        class="block text-base leading-6 text-neutral-700 hover:text-[#1364B3]"
+                      >
+                        Individual
+                      </NuxtLink>
+                      <NuxtLink
+                        to="/services/business"
+                        class="block text-base leading-6 text-neutral-700 hover:text-[#1364B3]"
+                      >
+                        Business
+                      </NuxtLink>
+                      <NuxtLink
+                        to="/services/international"
+                        class="block text-base leading-6 text-neutral-700 hover:text-[#1364B3]"
+                      >
+                        International
+                      </NuxtLink>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -274,28 +313,64 @@ onMounted(() => {
                   :class="{ 'rotate-180': isMobileServicesOpen }"
                 />
               </button>
-              <div v-if="isMobileServicesOpen" class="space-y-2 pl-4">
-                <NuxtLink
-                  to="/services/tax-returns"
-                  class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
-                  @click="toggleMobileMenu"
-                >
-                  Tax Returns
-                </NuxtLink>
-                <NuxtLink
-                  to="/services/consulting"
-                  class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
-                  @click="toggleMobileMenu"
-                >
-                  Consulting
-                </NuxtLink>
-                <NuxtLink
-                  to="/services/planning"
-                  class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
-                  @click="toggleMobileMenu"
-                >
-                  Tax Planning
-                </NuxtLink>
+              <div v-if="isMobileServicesOpen" class="space-y-4 pl-4">
+                <div class="space-y-2">
+                  <h4 class="border-b border-neutral-200 pb-1 text-sm font-medium text-neutral-500">
+                    Por tipo
+                  </h4>
+                  <div class="space-y-2">
+                    <NuxtLink
+                      to="/services/tax-returns"
+                      class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
+                      @click="toggleMobileMenu"
+                    >
+                      Tax Returns
+                    </NuxtLink>
+                    <NuxtLink
+                      to="/services/consulting"
+                      class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
+                      @click="toggleMobileMenu"
+                    >
+                      Consulting
+                    </NuxtLink>
+                    <NuxtLink
+                      to="/services/planning"
+                      class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
+                      @click="toggleMobileMenu"
+                    >
+                      Tax Planning
+                    </NuxtLink>
+                  </div>
+                </div>
+
+                <div class="space-y-2">
+                  <h4 class="border-b border-neutral-200 pb-1 text-sm font-medium text-neutral-500">
+                    Por temas
+                  </h4>
+                  <div class="space-y-2">
+                    <NuxtLink
+                      to="/services/individual"
+                      class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
+                      @click="toggleMobileMenu"
+                    >
+                      Individual
+                    </NuxtLink>
+                    <NuxtLink
+                      to="/services/business"
+                      class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
+                      @click="toggleMobileMenu"
+                    >
+                      Business
+                    </NuxtLink>
+                    <NuxtLink
+                      to="/services/international"
+                      class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
+                      @click="toggleMobileMenu"
+                    >
+                      International
+                    </NuxtLink>
+                  </div>
+                </div>
               </div>
             </div>
 
