@@ -29,7 +29,7 @@ const handleStepClick = (stepIndex: number, event: MouseEvent) => {
 </script>
 
 <template>
-  <section class="bg-neutral-100 py-16">
+  <section class="bg-neutral-100 py-8">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Título de la sección -->
       <div class="mb-12 text-center">

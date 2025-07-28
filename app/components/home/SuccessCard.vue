@@ -27,7 +27,7 @@ const handleButtonClick = (event: MouseEvent) => {
 </script>
 
 <template>
-  <section class="bg-neutral-100 pb-16">
+  <section class="bg-neutral-100 pb-8 pt-8">
     <div class="mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex w-full justify-center">
         <div class=" rounded-lg bg-blue-200 p-12 text-center">

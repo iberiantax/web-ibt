@@ -3,6 +3,7 @@ import HeroSection from '~/components/hero/HeroSection.vue';
 import CardsHome from '~/components/home/CardsHome.vue';
 import HowItWorks from '~/components/home/HowItWorks.vue';
 import SuccessCard from '~/components/home/SuccessCard.vue';
+import WhyUs from '~/components/home/WhyUs.vue';
 
 defineOptions({
   name: 'HomePage',
@@ -38,6 +39,10 @@ const handleBottomButtonClick = (event: MouseEvent) => {
 const handleSuccessCardClick = (event: MouseEvent) => {
   console.log('Success card button clicked', event);
 };
+
+const handleWhyUsCardClick = (index: number, event: MouseEvent) => {
+  console.log('WhyUs card clicked:', index, event);
+};
 </script>
 
 <template>
@@ -53,5 +58,6 @@ const handleSuccessCardClick = (event: MouseEvent) => {
     />
     <HowItWorks />
     <SuccessCard @button-click="handleSuccessCardClick" />
+    <WhyUs @card-click="handleWhyUsCardClick" />
   </div>
 </template>
