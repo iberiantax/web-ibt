@@ -19,7 +19,7 @@ defineOptions({
           </h1>
 
           <!-- Descripción -->
-          <p class="text-sm font-semibold leading-relaxed">
+          <p class="text-base font-semibold leading-relaxed">
             Fast and hassle-free tax filing that fully complies with official tax authority
             <br />
             requirements, ensuring accuracy and peace of mind.

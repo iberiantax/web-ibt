@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { CardsHome } from '~/components/shared/ui';
+import CardsHome from '~/components/home/CardsHome.vue';
+import HowItWorks from '~/components/home/HowItWorks.vue';
 
 defineOptions({
   name: 'HomePage',
@@ -44,5 +45,6 @@ const handleBottomButtonClick = (event: MouseEvent) => {
       @card-click="handleCardClick"
       @bottom-button-click="handleBottomButtonClick"
     />
+    <HowItWorks />
   </div>
 </template>

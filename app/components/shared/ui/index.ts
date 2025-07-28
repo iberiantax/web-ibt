@@ -10,4 +10,4 @@ export { default as BaseBadge } from './BaseBadge.vue';
 export { default as BaseAccordion } from './BaseAccordion.vue';
 export { default as BaseSegmentedControl } from './BaseSegmentedControl.vue';
 export { default as BaseContainer } from './BaseContainer.vue';
-export { default as CardsHome } from './CardsHome.vue';
+export { default as BaseStepper } from './BaseStepper.vue';
