@@ -19,7 +19,7 @@ defineOptions({
           </h1>
 
           <!-- Descripción -->
-          <p class="text-base font-semibold leading-relaxed">
+          <p class="text-lg font-semibold leading-relaxed">
             Fast and hassle-free tax filing that fully complies with official tax authority
             <br />
             requirements, ensuring accuracy and peace of mind.
@@ -29,12 +29,12 @@ defineOptions({
           <div class="space-y-3">
             <div class="flex items-center space-x-3">
               <img src="/svg/security.svg" alt="Security icon" class="h-5 w-5" />
-              <span class="text-sm text-neutral-700">Tax Office Collaborator</span>
+              <span class="text-base text-neutral-700">Tax Office Collaborator</span>
             </div>
 
             <div class="flex items-center space-x-3">
               <img src="/svg/person.svg" alt="Person icon" class="h-5 w-5" />
-              <span class="text-sm text-neutral-700">Trusted by +15.000 property owners</span>
+              <span class="text-base text-neutral-700">Trusted by +15.000 property owners</span>
             </div>
           </div>
 
@@ -49,12 +49,12 @@ defineOptions({
           <div class="flex flex-wrap items-center space-x-6">
             <div class="flex items-center space-x-2">
               <img src="/svg/google.svg" alt="Google icon" class="h-4 w-4" />
-              <span class="text-xs text-neutral-600">4.9 (627 reviews) on Google</span>
+              <span class="text-sm text-neutral-600">4.9 (627 reviews) on Google</span>
             </div>
 
             <div class="flex items-center space-x-2">
               <img src="/svg/star.svg" alt="Star icon" class="h-4 w-4" />
-              <span class="text-xs text-neutral-600">4.8 (58 reviews) on Trustpilot</span>
+              <span class="text-sm text-neutral-600">4.8 (58 reviews) on Trustpilot</span>
             </div>
           </div>
         </div>
