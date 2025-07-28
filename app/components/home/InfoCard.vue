@@ -34,13 +34,13 @@ const handleButtonClick = (event: MouseEvent) => {
         <div class="rounded-lg p-12 text-center" :class="backgroundColor">
           <!-- Título -->
           <h2
-            class="mb-6 text-[46px] font-[40] font-bold leading-[48px] tracking-[0%] text-[#1364B3]"
+            class="mb-2 text-3xl lg:text-4xl font-bold leading-[48px] tracking-[0%] text-[#1364B3]"
           >
             {{ title }}
           </h2>
 
           <!-- Descripción -->
-          <p class="mb-8 leading-relaxed text-gray-700">
+          <p class="mb-8 leading-relaxed text-base">
             {{ description }}
           </p>
 

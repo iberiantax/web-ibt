@@ -86,9 +86,9 @@ const handlePlanClick = (planIndex: number, event: MouseEvent) => {
             :key="index"
             @click="handleOwnerChange(index)"
             :class="[
-              'rounded-[12px] px-6 py-3 font-medium transition-colors',
+              'font-base rounded-[12px] px-6 py-2 transition-colors',
               selectedOwner === index
-                ? 'bg-white text-[#1364B3]'
+                ? 'bg-white text-[#00]'
                 : 'border border-white text-white hover:bg-white hover:text-[#1364B3]',
             ]"
           >

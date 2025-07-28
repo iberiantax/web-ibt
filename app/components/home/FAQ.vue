@@ -49,7 +49,7 @@ const handleAccordionClick = (index: number, event: MouseEvent) => {
 </script>
 
 <template>
-  <section class="bg-neutral-100 py-16">
+  <section class="bg-neutral-100 pt-16 pb-28">
     <div class="mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Título de la sección -->
       <div class="mb-12 text-center">
@@ -64,7 +64,7 @@ const handleAccordionClick = (index: number, event: MouseEvent) => {
           @click="handleAccordionClick(index, $event)"
         >
           <BaseAccordion :title="item.question" variant="primary" size="md">
-            <p class="text-p-s font-light">{{ item.answer }}</p>
+            <p class="text-base font-light">{{ item.answer }}</p>
           </BaseAccordion>
         </div>
       </div>

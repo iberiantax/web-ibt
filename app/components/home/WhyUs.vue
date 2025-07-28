@@ -66,7 +66,7 @@ const handleCardClick = (index: number, event: MouseEvent) => {
         <div
           v-for="(feature, index) in features"
           :key="index"
-          class="cursor-pointer rounded-lg bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
+          class="cursor-pointer rounded-lg bg-white p-8"
           @click="handleCardClick(index, $event)"
         >
           <!-- Icono -->
@@ -80,7 +80,7 @@ const handleCardClick = (index: number, event: MouseEvent) => {
           </h3>
 
           <!-- Descripción -->
-          <p class="text-start leading-relaxed text-gray-700">
+          <p class="text-start text-base leading-relaxed text-gray-700">
             {{ feature.description }}
           </p>
         </div>

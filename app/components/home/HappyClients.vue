@@ -120,7 +120,7 @@ const scrollToIndex = () => {
           <div
             ref="containerRef"
             class="scrollbar-hide flex snap-x snap-mandatory gap-4 overflow-x-auto"
-            style="height: 250px; scrollbar-width: none; -ms-overflow-style: none"
+            style="height: 220px; scrollbar-width: none; -ms-overflow-style: none"
           >
             <div
               v-for="(review, index) in reviews"

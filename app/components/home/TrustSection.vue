@@ -7,7 +7,7 @@ interface Feature {
 
 const features: Feature[] = [
   {
-    icon: '/svg/accurate.svg',
+    icon: '/svg/check.svg',
     title: 'Verification of the entries',
     description:
       'We verify the accuracy and completeness of all data entered in Form 210 to ensure compliance with Spanish tax regulations.',
@@ -19,13 +19,13 @@ const features: Feature[] = [
       'Automatic calculation of tax liability according to Spanish Tax Law, ensuring accurate and up-to-date calculations.',
   },
   {
-    icon: '/svg/world.svg',
+    icon: '/svg/euro.svg',
     title: 'Automatically save progress',
     description:
       'Your non-resident tax progress is automatically saved, allowing you to complete your filing at your own pace.',
   },
   {
-    icon: '/svg/euro.svg',
+    icon: '/svg/world.svg',
     title: 'Tax office collaborator',
     description:
       'IberianTax is certified by Agencia Tributaria to submit taxes on behalf of users, ensuring official compliance.',
@@ -52,22 +52,23 @@ const handleCardClick = (index: number, event: MouseEvent) => {
       </div>
 
       <!-- Layout principal: dos bloques en row -->
-      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
+      <div class="grid grid-cols-1 gap-12 xl:grid-cols-2">
         <!-- Columna izquierda: 4 cards en grid 2x2 -->
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div class="grid grid-cols-1 gap-6 xl:grid-cols-2">
           <div
             v-for="(feature, index) in features"
             :key="index"
-            class="cursor-pointer rounded-lg bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+            class="cursor-pointer rounded-lg bg-white p-6"
             @click="handleCardClick(index, $event)"
           >
             <!-- Icono -->
             <div class="mb-4 flex justify-start">
-              <img :src="feature.icon" :alt="feature.title" class="h-8 w-8" />
+              <Check v-if="feature.icon === 'check'" class="h-10 w-10 text-[#1364B3]" />
+              <img v-else :src="feature.icon" :alt="feature.title" class="h-10 w-10" />
             </div>
 
             <!-- Título -->
-            <h3 class="mb-3 text-start text-xl font-bold text-[#1364B3]">
+            <h3 class="mb-3 text-start text-[28px] font-bold text-[#1364B3]">
               {{ feature.title }}
             </h3>
 
@@ -80,11 +81,12 @@ const handleCardClick = (index: number, event: MouseEvent) => {
 
         <!-- Columna derecha: imagen -->
         <div class="flex items-center justify-center">
-          <div class="relative h-[300px] w-full max-w-lg">
-            <!-- Placeholder para la imagen - puedes reemplazar con tu imagen real -->
-            <div class="flex h-full w-full items-center justify-center rounded-lg bg-gray-200">
-              <span class="text-gray-500">Imagen aquí</span>
-            </div>
+          <div class="relative h-[300px] w-full">
+            <img
+              src="/images/hero/FrameHero.png"
+              alt="Modern living room interior with warm tones, plants, and contemporary furniture"
+              class="h-full w-full rounded-lg object-cover"
+            />
           </div>
         </div>
       </div>

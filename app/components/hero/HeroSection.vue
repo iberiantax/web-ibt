@@ -12,7 +12,7 @@ defineOptions({
     <div class="mx-auto px-4 py-12 sm:px-6 lg:px-8">
       <div class="grid items-center gap-8 lg:grid-cols-5 lg:gap-12">
         <!-- Contenido de texto - Izquierda (60%) -->
-        <div class="space-y-6 lg:col-span-3">
+        <div class="space-y-4 lg:col-span-3">
           <!-- Título principal -->
           <h1 class="text-[48px] font-bold leading-tight text-[#1364B3]">
             We handle your non-resident Spanish taxes

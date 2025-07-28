@@ -42,7 +42,7 @@ const cardIcons = ['/svg/home.svg', '/svg/company.svg', '/svg/capital-gain.svg']
   <section class="bg-neutral-100 py-8">
     <div class="mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Título de la sección -->
-      <div class="mb-12 text-center">
+      <div class="mb-8 text-center">
         <h2 class="text-3xl font-bold text-[#1364B3] lg:text-4xl">
           {{ title }}
         </h2>
@@ -53,7 +53,7 @@ const cardIcons = ['/svg/home.svg', '/svg/company.svg', '/svg/capital-gain.svg']
         <div
           v-for="(card, index) in cards"
           :key="index"
-          class="flex h-auto w-full cursor-pointer flex-col items-start rounded-3xl bg-blue-100 p-10 transition-all duration-200 hover:shadow-lg"
+          class="flex h-auto w-full cursor-pointer flex-col items-start rounded-3xl bg-blue-100 p-10"
           @click="handleCardClick(index, $event)"
         >
           <!-- Icono específico -->
@@ -76,7 +76,7 @@ const cardIcons = ['/svg/home.svg', '/svg/company.svg', '/svg/capital-gain.svg']
           <!-- Botón -->
           <div class="mt-auto w-full">
             <button
-              class="cursor-pointer rounded-xl bg-[#1364B3] px-6 py-3 font-medium text-white transition-all duration-200 hover:bg-[#0f4d8a]"
+              class="cursor-pointer rounded-xl bg-[#1364B3] px-6 py-3 text-base font-normal text-white"
             >
               {{ card.buttonText || 'More info' }}
             </button>

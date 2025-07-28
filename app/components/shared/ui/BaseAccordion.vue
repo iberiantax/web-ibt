@@ -96,7 +96,7 @@ const contentClasses = computed(() => {
   <div :class="accordionClasses" v-bind="$attrs">
     <!-- Header -->
     <button :class="headerClasses" @click="toggleAccordion" :disabled="disabled" type="button">
-      <span class="text-p-m font-medium text-gray-900">{{ title }}</span>
+      <span class="text-base font-bold text-gray-900">{{ title }}</span>
 
       <!-- Icon -->
       <span class="text-lg font-bold text-blue-500">

@@ -65,7 +65,7 @@ const emit = defineEmits<{
 }>();
 
 const cardClasses = computed(() => {
-  const baseClasses = ['transition-all duration-200', props.fullWidth ? 'w-full' : 'w-auto'];
+  const baseClasses = [props.fullWidth ? 'w-full' : 'w-auto'];
 
   // Clases por tipo
   const typeClasses = {
@@ -85,7 +85,7 @@ const cardClasses = computed(() => {
 });
 
 const buttonClasses = computed(() => {
-  const baseClasses = 'px-6 py-3 rounded-xl font-medium transition-all duration-200';
+  const baseClasses = 'px-6 py-3 rounded-xl font-normal transition-all duration-200 text-base';
 
   const variantClasses = {
     primary: 'bg-[#1364B3] text-white hover:bg-[#0f4d8a]',
@@ -315,7 +315,7 @@ const handleClick = (event: MouseEvent) => {
       <!-- Price -->
       <div class="mb-6 w-full">
         <div class="flex flex-col">
-          <h3 class="text-2xl font-bold text-gray-900">{{ price }}</h3>
+          <h3 class="text-4xl font-bold text-gray-900">{{ price }}</h3>
           <span class="text-sm text-gray-600">{{ pricePeriod }}</span>
         </div>
       </div>
