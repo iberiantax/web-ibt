@@ -170,17 +170,19 @@ module.exports = {
         600: '600', // $z-index-600
         900: '900', // $z-index-900
       },
-      // Sistema de Breakpoints basado en Figma Grid
+      // Sistema de Breakpoints optimizado
       screens: {
-        s: '320px', // Small: 320px - 768px
-        m: '769px', // Medium: 769px - 1200px
-        l: '1201px', // Large: 1201px - 1679px
-        xl: '1680px', // Extra Large: 1680px and more
         xs: '475px',
         sm: '640px',
         md: '768px',
         lg: '1024px',
+        xl: '1280px',
         '2xl': '1536px',
+        // Breakpoints personalizados más simples
+        s: '320px',
+        m: '769px',
+        l: '1201px',
+        'xl-custom': '1680px',
       },
       // Tipografía DM Sans
       fontFamily: {
