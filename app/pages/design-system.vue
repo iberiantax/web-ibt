@@ -998,8 +998,9 @@
 
         <!-- BaseSegmentedControl -->
         <section class="mb-8">
-   <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">
-BaseSegmentedControl          </h3>
+          <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">
+            BaseSegmented
+          </h3>
           <!-- Light Variant -->
           <div class="mb-6">
             <h4 class="mb-2 text-lg font-medium">Light Variant</h4>
@@ -1009,15 +1010,14 @@ BaseSegmentedControl          </h3>
           <!-- Dark Variant -->
           <div class="mb-6">
             <h4 class="mb-2 text-lg font-medium">Dark Variant</h4>
-      
-              <BaseSegmentedControl v-model="segmentedValue" :segments="segments" variant="dark" />
-       
+
+            <BaseSegmentedControl v-model="segmentedValue" :segments="segments" variant="dark" />
           </div>
         </section>
 
         <!-- BaseCard -->
         <section class="mb-8">
-        <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">BaseCard</h3>
+          <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">BaseCard</h3>
 
           <!-- Default Type -->
           <div class="mb-6">
@@ -1075,7 +1075,7 @@ BaseSegmentedControl          </h3>
 
           <!-- Review Type -->
           <div class="mb-6">
-            <h4 class="text-lg font-medium mb-2">Review Type</h4>
+            <h4 class="mb-2 text-lg font-medium">Review Type</h4>
             <BaseCard
               type="review"
               description="I have previously used other people to file my taxes in Spain, however they have made errors..."
@@ -1086,7 +1086,7 @@ BaseSegmentedControl          </h3>
 
           <!-- Pricing Type -->
           <div class="mb-6">
-            <h4 class="text-lg font-medium mb-2">Pricing Type</h4>
+            <h4 class="mb-2 text-lg font-medium">Pricing Type</h4>
             <BaseCard
               type="pricing"
               subtitle="Subtitle"
@@ -1098,7 +1098,6 @@ BaseSegmentedControl          </h3>
             />
           </div>
         </section>
-
       </div>
     </div>
   </div>
