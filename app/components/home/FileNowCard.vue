@@ -12,9 +12,9 @@ const handleButtonClick = (event: MouseEvent) => {
 
 <template>
   <InfoCard
-    title="You've successfully filed your taxes!"
-    description="It takes less than 10 minutes to file your declaration with the Spanish tax authorities."
-    button-text="Get started"
+    title="File your Spanish taxes for free."
+    description="Only pay when you are completely satisfied."
+    button-text="File now"
     background-color="bg-blue-200"
     @button-click="handleButtonClick"
   />

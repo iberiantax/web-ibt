@@ -4,6 +4,7 @@ import CardsHome from '~/components/home/CardsHome.vue';
 import HowItWorks from '~/components/home/HowItWorks.vue';
 import SuccessCard from '~/components/home/SuccessCard.vue';
 import WhyUs from '~/components/home/WhyUs.vue';
+import FileNowCard from '~/components/home/FileNowCard.vue';
 
 defineOptions({
   name: 'HomePage',
@@ -43,6 +44,10 @@ const handleSuccessCardClick = (event: MouseEvent) => {
 const handleWhyUsCardClick = (index: number, event: MouseEvent) => {
   console.log('WhyUs card clicked:', index, event);
 };
+
+const handleFileNowClick = (event: MouseEvent) => {
+  console.log('File now button clicked', event);
+};
 </script>
 
 <template>
@@ -59,5 +64,6 @@ const handleWhyUsCardClick = (index: number, event: MouseEvent) => {
     <HowItWorks />
     <SuccessCard @button-click="handleSuccessCardClick" />
     <WhyUs @card-click="handleWhyUsCardClick" />
+    <FileNowCard @button-click="handleFileNowClick" />
   </div>
 </template>
