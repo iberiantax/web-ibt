@@ -6,6 +6,7 @@ import SuccessCard from '~/components/home/SuccessCard.vue';
 import WhyUs from '~/components/home/WhyUs.vue';
 import FileNowCard from '~/components/home/FileNowCard.vue';
 import PricingPlans from '~/components/home/PricingPlans.vue';
+import TrustSection from '~/components/home/TrustSection.vue';
 
 defineOptions({
   name: 'HomePage',
@@ -57,6 +58,10 @@ const handleOwnerChange = (index: number) => {
 const handlePlanClick = (planIndex: number, event: MouseEvent) => {
   console.log('Plan clicked:', planIndex, event);
 };
+
+const handleTrustCardClick = (index: number, event: MouseEvent) => {
+  console.log('Trust card clicked:', index, event);
+};
 </script>
 
 <template>
@@ -77,5 +82,6 @@ const handlePlanClick = (planIndex: number, event: MouseEvent) => {
     <div class="py-8">
       <PricingPlans @owner-change="handleOwnerChange" @plan-click="handlePlanClick" />
     </div>
+    <TrustSection @card-click="handleTrustCardClick" />
   </div>
 </template>
