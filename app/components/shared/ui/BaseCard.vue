@@ -296,7 +296,7 @@ const handleClick = (event: MouseEvent) => {
 
       <!-- Review Text -->
       <div class="mb-4 w-full">
-        <p class="text-base text-gray-700">{{ description }}</p>
+        <p class="line-clamp-4 text-base text-gray-700">{{ description }}</p>
       </div>
 
       <!-- Reviewer Name -->

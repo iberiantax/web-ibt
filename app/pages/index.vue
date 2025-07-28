@@ -7,6 +7,8 @@ import WhyUs from '~/components/home/WhyUs.vue';
 import FileNowCard from '~/components/home/FileNowCard.vue';
 import PricingPlans from '~/components/home/PricingPlans.vue';
 import TrustSection from '~/components/home/TrustSection.vue';
+import HappyClients from '~/components/home/HappyClients.vue';
+import FAQ from '~/components/home/FAQ.vue';
 
 defineOptions({
   name: 'HomePage',
@@ -62,6 +64,18 @@ const handlePlanClick = (planIndex: number, event: MouseEvent) => {
 const handleTrustCardClick = (index: number, event: MouseEvent) => {
   console.log('Trust card clicked:', index, event);
 };
+
+const handleHappyClientsCardClick = (index: number, event: MouseEvent) => {
+  console.log('Happy clients card clicked:', index, event);
+};
+
+const handleReadAllReviews = (event: MouseEvent) => {
+  console.log('Read all reviews clicked:', event);
+};
+
+const handleFAQAccordionClick = (index: number, event: MouseEvent) => {
+  console.log('FAQ accordion clicked:', index, event);
+};
 </script>
 
 <template>
@@ -83,5 +97,10 @@ const handleTrustCardClick = (index: number, event: MouseEvent) => {
       <PricingPlans @owner-change="handleOwnerChange" @plan-click="handlePlanClick" />
     </div>
     <TrustSection @card-click="handleTrustCardClick" />
+    <HappyClients
+      @card-click="handleHappyClientsCardClick"
+      @read-all-reviews="handleReadAllReviews"
+    />
+    <FAQ @accordion-click="handleFAQAccordionClick" />
   </div>
 </template>
