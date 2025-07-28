@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import HeroSection from '~/components/hero/HeroSection.vue';
 import CardsHome from '~/components/home/CardsHome.vue';
 import HowItWorks from '~/components/home/HowItWorks.vue';
+import SuccessCard from '~/components/home/SuccessCard.vue';
 
 defineOptions({
   name: 'HomePage',
@@ -32,6 +34,10 @@ const handleCardClick = (index: number, event: MouseEvent) => {
 const handleBottomButtonClick = (event: MouseEvent) => {
   console.log('Bottom button clicked:', event);
 };
+
+const handleSuccessCardClick = (event: MouseEvent) => {
+  console.log('Success card button clicked', event);
+};
 </script>
 
 <template>
@@ -46,5 +52,6 @@ const handleBottomButtonClick = (event: MouseEvent) => {
       @bottom-button-click="handleBottomButtonClick"
     />
     <HowItWorks />
+    <SuccessCard @button-click="handleSuccessCardClick" />
   </div>
 </template>
