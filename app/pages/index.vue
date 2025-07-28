@@ -5,6 +5,7 @@ import HowItWorks from '~/components/home/HowItWorks.vue';
 import SuccessCard from '~/components/home/SuccessCard.vue';
 import WhyUs from '~/components/home/WhyUs.vue';
 import FileNowCard from '~/components/home/FileNowCard.vue';
+import PricingPlans from '~/components/home/PricingPlans.vue';
 
 defineOptions({
   name: 'HomePage',
@@ -48,6 +49,14 @@ const handleWhyUsCardClick = (index: number, event: MouseEvent) => {
 const handleFileNowClick = (event: MouseEvent) => {
   console.log('File now button clicked', event);
 };
+
+const handleOwnerChange = (index: number) => {
+  console.log('Owner changed to:', index);
+};
+
+const handlePlanClick = (planIndex: number, event: MouseEvent) => {
+  console.log('Plan clicked:', planIndex, event);
+};
 </script>
 
 <template>
@@ -65,5 +74,8 @@ const handleFileNowClick = (event: MouseEvent) => {
     <SuccessCard @button-click="handleSuccessCardClick" />
     <WhyUs @card-click="handleWhyUsCardClick" />
     <FileNowCard @button-click="handleFileNowClick" />
+    <div class="py-8">
+      <PricingPlans @owner-change="handleOwnerChange" @plan-click="handlePlanClick" />
+    </div>
   </div>
 </template>

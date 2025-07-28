@@ -11,3 +11,4 @@ export { default as BaseAccordion } from './BaseAccordion.vue';
 export { default as BaseSegmentedControl } from './BaseSegmentedControl.vue';
 export { default as BaseContainer } from './BaseContainer.vue';
 export { default as BaseStepper } from './BaseStepper.vue';
+export { default as BaseCarousel } from './BaseCarousel.vue';

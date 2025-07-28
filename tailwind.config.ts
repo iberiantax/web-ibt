@@ -46,6 +46,7 @@ module.exports = {
           700: '#127372',
           800: '#154C4C',
           900: '#052C2E',
+          500: '#1BC5BD', // Color específico para los botones
         },
         orange: {
           50: '#FFF2F0',

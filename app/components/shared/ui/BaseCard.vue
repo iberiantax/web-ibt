@@ -7,7 +7,7 @@ interface Props {
   image?: string;
   imageAlt?: string;
   buttonText?: string;
-  buttonVariant?: 'primary' | 'secondary' | 'outline';
+  buttonVariant?: 'primary' | 'secondary' | 'outline' | 'green-500';
   disabled?: boolean;
   fullWidth?: boolean;
   financialData?: {
@@ -78,7 +78,7 @@ const cardClasses = computed(() => {
     blog: 'flex flex-col items-start p-0 relative w-full max-w-md h-auto bg-white rounded-3xl',
     'case-studies': 'flex flex-col items-start p-6 w-full max-w-lg h-auto bg-white rounded-3xl',
     review: 'flex flex-col items-start p-6 w-full max-w-md h-auto bg-white rounded-3xl',
-    pricing: 'flex flex-col items-start p-6 w-full max-w-md h-auto bg-white rounded-3xl',
+    pricing: 'flex flex-col items-start p-8 w-full max-w-md h-auto bg-white rounded-3xl',
   };
 
   return [...baseClasses, typeClasses[props.type]].join(' ');
@@ -91,6 +91,7 @@ const buttonClasses = computed(() => {
     primary: 'bg-[#1364B3] text-white hover:bg-[#0f4d8a]',
     secondary: 'bg-gray-200 text-gray-800 hover:bg-gray-300',
     outline: 'bg-white text-[#1364B3] border border-[#1364B3] hover:bg-[#1364B3] hover:text-white',
+    'green-500': 'bg-green-500 text-white hover:bg-green-600',
   };
 
   const stateClasses = props.disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer';
@@ -307,20 +308,20 @@ const handleClick = (event: MouseEvent) => {
     <!-- Pricing Type -->
     <div v-else-if="type === 'pricing'" class="flex h-full w-full flex-col items-start">
       <!-- Subtitle -->
-      <div v-if="subtitle" class="mb-2 w-full">
+      <div v-if="subtitle" class="mb-4 w-full">
         <p class="text-lg font-semibold text-gray-900">{{ subtitle }}</p>
       </div>
 
       <!-- Price -->
-      <div class="mb-4 w-full">
-        <div class="flex items-baseline">
+      <div class="mb-6 w-full">
+        <div class="flex flex-col">
           <h3 class="text-2xl font-bold text-gray-900">{{ price }}</h3>
-          <span class="ml-1 text-sm text-gray-600">{{ pricePeriod }}</span>
+          <span class="text-sm text-gray-600">{{ pricePeriod }}</span>
         </div>
       </div>
 
       <!-- Button -->
-      <div class="mb-4 w-full">
+      <div class="mb-6 w-full">
         <button
           v-if="buttonText"
           :class="buttonClasses"
