@@ -40,7 +40,7 @@ const toggleMobileMenu = () => {
         <!-- Navegación y Botones - Derecha -->
         <div class="flex items-center space-x-8">
           <!-- Desktop Navigation -->
-          <nav class="hidden items-center space-x-8 md:flex">
+          <nav class="hidden items-center space-x-8 lg:flex">
             <!-- About -->
             <NuxtLink
               to="/about"
@@ -159,7 +159,7 @@ const toggleMobileMenu = () => {
           </nav>
 
           <!-- Desktop Buttons -->
-          <div class="hidden items-center space-x-4 md:flex">
+          <div class="hidden items-center space-x-4 lg:flex">
             <BaseButton variant="ghost">Log in</BaseButton>
             <BaseButton variant="primary">
               Get started
@@ -169,7 +169,7 @@ const toggleMobileMenu = () => {
         </div>
 
         <!-- Mobile menu button -->
-        <div class="md:hidden">
+        <div class="lg:hidden">
           <button
             @click="toggleMobileMenu"
             class="rounded-lg p-2 text-neutral-700 transition-colors duration-200 hover:bg-neutral-100 hover:text-[#1364B3]"
@@ -181,7 +181,7 @@ const toggleMobileMenu = () => {
       </div>
 
       <!-- Mobile Navigation - Full Screen -->
-      <div v-if="isMobileMenuOpen" class="fixed inset-0 top-20 bg-white md:hidden">
+      <div v-if="isMobileMenuOpen" class="fixed inset-0 top-20 bg-white lg:hidden">
         <div class="flex h-full flex-col">
           <!-- Mobile Navigation Content -->
           <div class="flex-1 space-y-6 overflow-y-auto px-4 py-6">
