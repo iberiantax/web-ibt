@@ -1158,8 +1158,6 @@
             />
           </div>
 
-       
-
           <!-- Banner solo con título -->
           <div class="mb-6">
             <h4 class="mb-2 text-lg font-medium">Banner with Title Only</h4>
@@ -1219,7 +1217,33 @@
               imageAlt="Protection services"
             />
           </div>
-        
+        </section>
+
+        <!-- BaseReportsCard -->
+        <section class="mb-8">
+          <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">BaseReportsCard</h3>
+          <!-- Ejemplo con reportes -->
+          <div class="mb-6">
+            <h4 class="mb-2 text-lg font-medium">Reports Card Example</h4>
+            <BaseReportsCard
+              title="Powerful reports for detailed financial insights"
+              description="We've a range of powerful reports designed to ensure you are able to maximize return on investment and have a stress free tax season."
+              image="/images/hero/FrameHero.png"
+              imageAlt="Financial reports"
+              :basicReports="[
+                { text: 'Income and expense' },
+                { text: 'Schedule E' },
+                { text: 'Rent Ledger' },
+                { text: 'Online Payments' },
+              ]"
+              :advancedReports="[
+                { text: 'Profit and loss summary' },
+                { text: 'Income and expense detailed' },
+                { text: 'Rent Payment Difference' },
+                { text: 'Overdue Rent Payments' },
+              ]"
+            />
+          </div>
         </section>
       </div>
     </div>
@@ -1241,6 +1265,7 @@ import {
   BaseStepperHorizontal,
   BaseStepperVertical,
   BaseInfoCard,
+  BaseReportsCard,
 } from '~/components/shared/ui';
 
 // Estado reactivo para los dropdowns

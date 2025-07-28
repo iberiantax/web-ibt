@@ -14,5 +14,6 @@ export { default as BaseStepper } from './BaseStepper.vue';
 export { default as BaseStepperHorizontal } from './BaseStepperHorizontal.vue';
 export { default as BaseStepperVertical } from './BaseStepperVertical.vue';
 export { default as BaseInfoCard } from './BaseInfoCard.vue';
+export { default as BaseReportsCard } from './BaseReportsCard.vue';
 export { default as BaseCarousel } from './BaseCarousel.vue';
 export { default as BaseBanner } from './BaseBanner.vue';
