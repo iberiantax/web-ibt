@@ -46,7 +46,9 @@ defineOptions({
           </div>
 
           <!-- Reseñas -->
-          <div class="flex flex-wrap items-center space-x-6">
+          <div
+            class="flex flex-col space-y-2 sm:flex-row sm:items-center sm:space-x-6 sm:space-y-0"
+          >
             <div class="flex items-center space-x-2">
               <img src="/svg/google.svg" alt="Google icon" class="h-4 w-4" />
               <span class="text-sm text-neutral-600">4.9 (627 reviews) on Google</span>
