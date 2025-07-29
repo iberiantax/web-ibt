@@ -32,17 +32,19 @@ const handleAdvancedReportClick = (item: ReportItem, index: number) => {
 </script>
 
 <template>
-  <section class="w-full py-12" :class="backgroundColor">
+  <section class="w-full py-8 md:py-12" :class="backgroundColor">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-6xl">
-        <div class="flex items-center gap-12">
+      <div class="mx-auto max-w-7xl">
+        <div class="flex flex-col items-center gap-8 xl:flex-row xl:gap-12">
           <!-- Imagen -->
-          <div class="flex-shrink-0">
-            <div class="h-80 w-80 overflow-hidden rounded-[24px]">
+          <div class="w-full max-w-md flex-shrink-0">
+            <div
+              class="aspect-[4/3] w-full overflow-hidden rounded-[16px] xl:aspect-square "
+            >
               <img v-if="image" :src="image" :alt="imageAlt" class="h-full w-full object-cover" />
               <div v-else class="flex h-full w-full items-center justify-center bg-gray-200">
                 <svg
-                  class="h-16 w-16 text-gray-400"
+                  class="h-12 w-12 text-gray-400 sm:h-16 sm:w-16"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -59,28 +61,32 @@ const handleAdvancedReportClick = (item: ReportItem, index: number) => {
           </div>
 
           <!-- Contenido de texto -->
-          <div class="flex-1">
-            <h2 class="mb-4 text-3xl font-bold text-[#1364B3] lg:text-4xl">
+          <div class="w-full flex-1">
+            <h2 class="mb-4 text-2xl font-bold text-[#1364B3] sm:text-3xl xl:text-4xl">
               {{ title }}
             </h2>
-            <p class="mb-8 text-base text-gray-700">
+            <p class="mb-6 text-sm text-gray-700 sm:text-base xl:mb-8">
               {{ description }}
             </p>
 
-            <!-- Dos columnas de reportes -->
-            <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+            <!-- Dos columnas de reportes - responsive -->
+            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:gap-8">
               <!-- Reportes básicos -->
               <div>
-                <h3 class="mb-2 text-lg font-bold text-[#1364B3]">Basic reports include</h3>
-                <p class="mb-4 text-sm text-gray-600">Can be exported as PDFs and include:</p>
-                <ul class="space-y-2">
+                <h3 class="mb-2 text-base font-bold text-[#1364B3] sm:text-lg">
+                  Basic reports include
+                </h3>
+                <p class="mb-3 text-xs text-gray-600 sm:text-sm xl:mb-4">
+                  Can be exported as PDFs and include:
+                </p>
+                <ul class="space-y-2 sm:space-y-3">
                   <li
                     v-for="(item, index) in basicReports"
                     :key="index"
-                    class="flex cursor-pointer items-center text-base text-gray-700"
+                    class="flex cursor-pointer items-center pl-2 text-sm text-gray-700 sm:text-base"
                     @click="handleBasicReportClick(item, index)"
                   >
-                    <span class="mr-2 text-[#1364B3]">✓</span>
+                    <span class="mr-3 text-[#1364B3]">✓</span>
                     {{ item.text }}
                   </li>
                 </ul>
@@ -88,18 +94,20 @@ const handleAdvancedReportClick = (item: ReportItem, index: number) => {
 
               <!-- Reportes avanzados -->
               <div>
-                <h3 class="mb-2 text-lg font-bold text-[#1364B3]">Advanced reports include</h3>
-                <p class="mb-4 text-sm text-gray-600">
+                <h3 class="mb-2 text-base font-bold text-[#1364B3] sm:text-lg">
+                  Advanced reports include
+                </h3>
+                <p class="mb-3 text-xs text-gray-600 sm:text-sm xl:mb-4">
                   Can also be exported as fully editable CSV files and:
                 </p>
-                <ul class="space-y-2">
+                <ul class="space-y-2 sm:space-y-3">
                   <li
                     v-for="(item, index) in advancedReports"
                     :key="index"
-                    class="flex cursor-pointer items-center text-base text-gray-700"
+                    class="flex cursor-pointer items-center pl-2 text-sm text-gray-700 sm:text-base"
                     @click="handleAdvancedReportClick(item, index)"
                   >
-                    <span class="mr-2 text-[#1364B3]">✓</span>
+                    <span class="mr-3 text-[#1364B3]">✓</span>
                     {{ item.text }}
                   </li>
                 </ul>

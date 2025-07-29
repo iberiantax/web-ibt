@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-neutral-100 p-8 font-dm-sans">
-    <div class="mx-auto max-w-6xl">
+    <div class="mx-auto">
       <h1 class="mb-8 text-center text-h1-m font-medium text-neutral-900">
         🎨 Sistema de Diseño - IberianTax
       </h1>
@@ -1097,40 +1097,6 @@
           </div>
         </section>
 
-        <!-- BaseStepperHorizontal -->
-        <section class="mb-8">
-          <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">
-            BaseStepperHorizontal
-          </h3>
-
-          <!-- Ejemplo con razones comunes -->
-          <div class="mb-6">
-            <h4 class="mb-2 text-lg font-medium">Common Reasons Example</h4>
-            <BaseStepperHorizontal
-              :steps="[
-                {
-                  number: 1,
-                  title: 'Ownership Period Errors',
-                  description:
-                    'Incorrect calculation of the ownership period, leading to taxes being paid for periods when you didn\'t actually own the property.',
-                },
-                {
-                  number: 2,
-                  title: 'Incorrect Tax Rate',
-                  description:
-                    'Using the standard 24% rate instead of the reduced 19% rate for EU/EEA residents, or vice versa.',
-                },
-                {
-                  number: 3,
-                  title: 'Incorrect Income Basis',
-                  description:
-                    'Using the wrong percentage (2% vs 1.1%) of the cadastral value to calculate the imputed income.',
-                },
-              ]"
-            />
-          </div>
-        </section>
-
         <!-- BaseBanner -->
         <section class="mb-8">
           <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">BaseBanner</h3>
@@ -1169,16 +1135,45 @@
           </div>
         </section>
 
-        <!-- BaseStepperVertical -->
+        <!-- BaseSteppers -->
         <section class="mb-8">
-          <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">
-            BaseStepperVertical
-          </h3>
-          <!-- Ejemplo con pasos de proceso -->
+          <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">BaseSteppers</h3>
+
+          <!-- Ejemplo con razones comunes -->
+
           <div class="mb-6">
-            <h4 class="mb-2 text-lg font-medium">How It Works Example</h4>
+            <h4 class="mb-6 text-lg font-medium">Stepper Horizontal</h4>
+            <BaseStepperHorizontal
+              :steps="[
+                {
+                  number: 1,
+                  title: 'Ownership Period Errors',
+                  description:
+                    'Incorrect calculation of the ownership period, leading to taxes being paid for periods when you didn\'t actually own the property.',
+                },
+                {
+                  number: 2,
+                  title: 'Incorrect Tax Rate',
+                  description:
+                    'Using the standard 24% rate instead of the reduced 19% rate for EU/EEA residents, or vice versa.',
+                },
+                {
+                  number: 3,
+                  title: 'Incorrect Income Basis',
+                  description:
+                    'Using the wrong percentage (2% vs 1.1%) of the cadastral value to calculate the imputed income.',
+                },
+              ]"
+            />
+          </div>
+        </section>
+
+        <!-- BaseStepperVertical -->
+        <section class="mb-8 mt-12">
+          <div class="mb-6">
+            <h4 class="mb-2 text-lg font-medium">Stepper Vertical</h4>
             <BaseStepperVertical
-              title="HOW IT WORKS!"
+              title=""
               :steps="[
                 {
                   number: 1,
@@ -1203,8 +1198,13 @@
           </div>
         </section>
 
-        <!-- BaseInfoCard -->
         <section class="mb-8">
+          <h4 class="mb-6 text-lg font-medium">Stepper base</h4>
+          <HowItWorks />
+        </section>
+
+        <!-- BaseInfoCard -->
+        <section class="mb-8 mt-20">
           <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">BaseInfoCard</h3>
           <!-- Ejemplo con imagen -->
           <div class="mb-6">
@@ -1219,12 +1219,61 @@
           </div>
         </section>
 
+        <!-- BaseVerticalCard -->
+        <section class="mb-8">
+          <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">BaseVerticalCard</h3>
+          <!-- Ejemplo con imagen -->
+          <div class="mb-6">
+            <h4 class="mb-2 text-lg font-medium">Vertical Card with Image</h4>
+            <BaseVerticalCard
+              title="Unmatched security"
+              description="Secure your tax filing with Expatfile's quantum-proof encryption and passwordless login, safeguarded by weekly PCI-compliant audits. Our cutting-edge technology ensures your financial data is protected, today and tomorrow. Experience the security you deserve."
+              buttonText="Get started"
+              image="/images/hero/FrameHero.png"
+              imageAlt="Security services"
+            />
+          </div>
+        </section>
+
+        <!-- Certificate Card Example -->
+        <div class="mb-12">
+          <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">
+            Certificate Card Example
+          </h3>
+          <div class="mx-auto max-w-2xl">
+            <div class="rounded-lg border border-neutral-200 bg-white p-8">
+              <h2 class="mb-4 text-2xl font-bold text-[#1364B3]">When do I need it?</h2>
+              <p class="mb-6 text-base text-neutral-700">
+                You will need this certificate in various situations where you must officially
+                communicate with government agencies, companies, or other entities, such as:
+              </p>
+              <ul class="space-y-2 text-base text-neutral-700">
+                <li class="flex items-start">
+                  <span class="mr-2 mt-1 text-neutral-400">•</span>
+                  <span>Accommodation Registration with SES Hospedajes,</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-2 mt-1 text-neutral-400">•</span>
+                  <span>Filing a tax return,</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-2 mt-1 text-neutral-400">•</span>
+                  <span>Electronically signing official documents,</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-2 mt-1 text-neutral-400">•</span>
+                  <span>Interacting with social security institutions.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <!-- BaseReportsCard -->
         <section class="mb-8">
-          <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">BaseReportsCard</h3>
-          <!-- Ejemplo con reportes -->
-          <div class="mb-6">
-            <h4 class="mb-2 text-lg font-medium">Reports Card Example</h4>
+          <h4 class="mb-2 text-lg font-medium">Reports Card Example</h4>
+          <!-- Usar el componente fuera del padding del layout -->
+          <div class="-mx-8">
             <BaseReportsCard
               title="Powerful reports for detailed financial insights"
               description="We've a range of powerful reports designed to ensure you are able to maximize return on investment and have a stress free tax season."
@@ -1245,6 +1294,25 @@
             />
           </div>
         </section>
+
+        <!-- Hero Components -->
+        <div class="mt-16">
+          <!-- ReferralHero Component -->
+          <div class="mb-8">
+            <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">
+              ReferralHero Component
+            </h3>
+            <ReferralHero />
+          </div>
+
+          <!-- Form210Hero Component -->
+          <div class="mb-12">
+            <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">
+              Form210Hero Component
+            </h3>
+            <Form210Hero />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1265,8 +1333,11 @@ import {
   BaseStepperHorizontal,
   BaseStepperVertical,
   BaseInfoCard,
+  BaseVerticalCard,
   BaseReportsCard,
 } from '~/components/shared/ui';
+import { ReferralHero, Form210Hero } from '~/components/hero';
+import HowItWorks from '~/components/home/HowItWorks.vue';
 
 // Estado reactivo para los dropdowns
 const dropdown1Value = ref('');

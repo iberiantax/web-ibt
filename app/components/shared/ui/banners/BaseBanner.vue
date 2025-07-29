@@ -35,15 +35,15 @@ const handleButtonClick = (event: MouseEvent) => {
 </script>
 
 <template>
-  <div class="w-full rounded-[12px] p-6" :class="backgroundColor">
-    <div class="flex items-center justify-between">
+  <div class="w-full rounded-[8px] p-4 sm:rounded-[12px] sm:p-6" :class="backgroundColor">
+    <div class="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:justify-between">
       <!-- Imagen -->
       <div class="flex-shrink-0">
-        <div v-if="image" class="h-16 w-16 overflow-hidden rounded-[12px]">
+        <div v-if="image" class="h-12 w-12 overflow-hidden rounded-[8px] sm:h-16 sm:w-16">
           <img :src="image" :alt="imageAlt" class="h-full w-full object-cover" />
         </div>
-        <div v-else class="flex h-16 w-16 items-center justify-center rounded-[12px] bg-gray-200">
-          <svg class="h-8 w-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div v-else class="flex h-12 w-12 items-center justify-center rounded-[8px] bg-gray-200 sm:h-16 sm:w-16">
+          <svg class="h-6 w-6 text-gray-400 sm:h-8 sm:w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -55,25 +55,25 @@ const handleButtonClick = (event: MouseEvent) => {
       </div>
 
       <!-- Contenido de texto -->
-      <div class="mx-6 flex-1">
+      <div class="flex-1 text-center sm:mx-6 sm:text-left">
         <h3
           class="mb-1 font-bold text-[#1364B3]"
-          :class="showDescription ? 'text-base' : 'text-2xl'"
+          :class="showDescription ? 'text-sm sm:text-base' : 'text-lg sm:text-2xl'"
         >
           {{ title }}
         </h3>
-        <p v-if="showDescription" class="text-sm text-gray-700">{{ description }}</p>
+        <p v-if="showDescription" class="text-xs text-gray-700 sm:text-sm">{{ description }}</p>
       </div>
 
       <!-- Botón -->
-      <div class="flex-shrink-0">
+      <div class="flex-shrink-0 w-full sm:w-auto">
         <BaseButton
           variant="primary"
           @click="handleButtonClick"
-          class="flex items-center space-x-2"
+          class="flex w-full items-center justify-center space-x-2 sm:w-auto"
         >
-          <span>{{ buttonText }}</span>
-          <ArrowRight v-if="showArrow" class="h-4 w-4" />
+          <span class="text-sm sm:text-base">{{ buttonText }}</span>
+          <ArrowRight v-if="showArrow" class="h-3 w-3 sm:h-4 sm:w-4" />
         </BaseButton>
       </div>
     </div>
