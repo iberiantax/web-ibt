@@ -7,6 +7,9 @@ export * from './steppers';
 // Banners
 export * from './banners';
 
+// Form
+export * from './form';
+
 // Inputs
 export * from './inputs';
 

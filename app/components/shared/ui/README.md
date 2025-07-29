@@ -10,6 +10,7 @@ ui/
 ├── buttons/          # Botones y controles
 ├── cards/            # Tarjetas y contenedores
 ├── feedback/         # Componentes de feedback
+├── form/             # Formularios y validación
 ├── inputs/           # Campos de entrada
 ├── layout/           # Componentes de layout
 ├── navigation/       # Navegación y enlaces
@@ -52,7 +53,38 @@ import { BaseButton } from '@/components/shared/ui';
 </template>
 ```
 
-### 2. Tarjetas (`cards/`)
+### 2. Formularios (`form/`)
+
+#### BaseForm
+
+Formulario de contacto completo con validación automática.
+
+```vue
+<BaseForm
+  title="Contact Us"
+  description="Get in touch with us"
+  :categories="formCategories"
+  @submit="handleFormSubmit"
+/>
+```
+
+**Props:**
+
+- `title`: string - Título del formulario
+- `description`: string - Descripción del formulario
+- `categories`: Array - Opciones para el dropdown de categoría
+- `submitText`: string - Texto del botón de envío
+- `loading`: boolean - Estado de carga del formulario
+
+**Características:**
+
+- Validación automática de todos los campos
+- Mensajes de error específicos
+- Campos requeridos con asteriscos (\*)
+- Variante "form" con fondo blanco y bordes azules
+- Evento `submit` que emite los datos del formulario
+
+### 3. Tarjetas (`cards/`)
 
 #### BaseCard
 
@@ -92,7 +124,7 @@ Tarjeta especializada para reportes y datos.
 </BaseReportsCard>
 ```
 
-### 3. Inputs (`inputs/`)
+### 4. Inputs (`inputs/`)
 
 #### BaseInput
 
@@ -118,7 +150,7 @@ Input reutilizable con diferentes tipos y estados.
 - `readonly`: boolean
 - `required`: boolean
 - `size`: 'sm' | 'md' | 'lg'
-- `variant`: 'default' | 'error' | 'success'
+- `variant`: 'default' | 'error' | 'success' | 'white' | 'blue' | 'form'
 - `label`: string
 - `helperText`: string
 - `errorText`: string
@@ -133,6 +165,13 @@ Input reutilizable con diferentes tipos y estados.
 ```vue
 <BaseTextarea v-model="content" placeholder="Escribe tu mensaje..." rows="4" maxLength="500" />
 ```
+
+**Props:**
+
+- `variant`: 'default' | 'error' | 'success' | 'white' | 'blue' | 'form'
+- `rows`: number - Número de filas
+- `maxLength`: number - Longitud máxima de caracteres
+- `resize`: 'none' | 'vertical' | 'horizontal' | 'both'
 
 #### BaseCheckbox
 
@@ -174,6 +213,12 @@ Menús desplegables.
   </template>
 </BaseDropdown>
 ```
+
+**Props:**
+
+- `variant`: 'default' | 'error' | 'success' | 'white' | 'blue' | 'form'
+- `options`: Array - Opciones del dropdown
+- `placeholder`: string - Texto de placeholder
 
 ### 5. Layout (`layout/`)
 
@@ -347,6 +392,7 @@ Stepper vertical especializado.
 <script setup>
 import { BaseButton } from '@/components/shared/ui/buttons';
 import { BaseCard } from '@/components/shared/ui/cards';
+import { BaseForm } from '@/components/shared/ui/form';
 import { BaseInput } from '@/components/shared/ui/inputs';
 </script>
 ```
@@ -355,7 +401,7 @@ import { BaseInput } from '@/components/shared/ui/inputs';
 
 ```vue
 <script setup>
-import { BaseButton, BaseCard, BaseInput } from '@/components/shared/ui';
+import { BaseButton, BaseCard, BaseForm, BaseInput } from '@/components/shared/ui';
 </script>
 ```
 

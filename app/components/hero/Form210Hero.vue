@@ -9,7 +9,7 @@ defineOptions({
 
 <template>
   <section>
-    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto px-4 py-16 sm:px-6 lg:px-8">
       <div class="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
         <!-- Sección izquierda - Título -->
         <div class="space-y-6">

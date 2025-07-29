@@ -7,7 +7,7 @@ interface Props {
   readonly?: boolean;
   required?: boolean;
   size?: 'sm' | 'md' | 'lg';
-  variant?: 'default' | 'error' | 'success' | 'white' | 'blue';
+  variant?: 'default' | 'error' | 'success' | 'white' | 'blue' | 'form';
   label?: string;
   helperText?: string;
   errorText?: string;
@@ -71,6 +71,7 @@ const inputClasses = computed(() => {
     success: 'border-green-300 focus:ring-green-500 focus:border-green-500',
     white: 'bg-white border-gray-300 focus:ring-[#1364B3] focus:border-[#1364B3]',
     blue: 'bg-blue-50 border-blue-500 focus:ring-[#1364B3] focus:border-[#1364B3]',
+    form: 'bg-white border-blue-500 focus:ring-[#1364B3] focus:border-[#1364B3]',
   };
 
   // Clases de estado

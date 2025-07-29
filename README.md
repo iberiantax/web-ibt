@@ -156,7 +156,10 @@ Configuración con Vue + TypeScript + Prettier para mantener consistencia de có
 ```
 app/components/
 ├── hero/
-│   └── HeroSection.vue
+│   ├── HeroSection.vue
+│   ├── ReferralHero.vue
+│   ├── Form210Hero.vue
+│   └── index.ts
 ├── home/
 │   ├── CardsHome.vue
 │   ├── FAQ.vue
@@ -196,6 +199,9 @@ app/components/
         │   ├── BaseSearch.vue
         │   ├── BaseSegmentedControl.vue
         │   └── index.ts
+        ├── form/
+        │   ├── BaseForm.vue
+        │   └── index.ts
         ├── inputs/
         │   ├── BaseCheckbox.vue
         │   ├── BaseInput.vue
@@ -221,6 +227,12 @@ app/components/
 
 ### Componentes Base del Sistema de Diseño
 
+#### Hero Components (`hero/`)
+
+- **HeroSection**: Hero principal con imagen lateral y contenido de texto
+- **ReferralHero**: Hero para programa de referidos con imagen superior y contenido centrado
+- **Form210Hero**: Hero para Form 210 con layout de dos columnas y fondo azul claro
+
 #### Botones (`ui/buttons/`)
 
 - **BaseButton**: Botón reutilizable con variantes primary, secondary, tertiary, ghost, outline
@@ -232,6 +244,13 @@ app/components/
 - **BaseCard**: Contenedor de tarjeta con variantes elevated, outlined, flat
 - **BaseInfoCard**: Tarjeta informativa especializada
 - **BaseReportsCard**: Tarjeta para reportes y datos
+
+#### Formularios (`ui/form/`)
+
+- **BaseForm**: Formulario de contacto completo con validación y campos requeridos
+- Incluye: Name, Email, Subject, Category, Message
+- Validación automática con mensajes de error
+- Variante "form" con fondo blanco y bordes azules
 
 #### Inputs (`ui/inputs/`)
 
@@ -280,6 +299,46 @@ app/pages/
     ├── index.vue
     └── imputed-income.vue
 ```
+
+### Componentes Hero Especializados
+
+#### HeroSection
+
+- **Propósito**: Hero principal de la aplicación
+- **Características**: Layout de dos columnas con imagen lateral
+- **Contenido**: Título, descripción, características de confianza, botón CTA, reseñas
+
+#### ReferralHero
+
+- **Propósito**: Programa de referidos y recomendaciones
+- **Características**: Imagen superior centrada, contenido de texto inferior
+- **Contenido**: Título sobre ganar 10€ por referido, descripción del programa, botón CTA
+
+#### Form210Hero
+
+- **Propósito**: Página específica para Form 210 - Rental Income
+- **Características**: Layout de dos columnas con fondo azul claro
+- **Contenido**: Título, descripción de IberianTax, dos botones CTA (Start tax return, See prices)
+
+### Componentes Home Especializados
+
+#### AboutValues
+
+- **Propósito**: Sección "Who we are" con valores de la empresa
+- **Características**: Layout de dos columnas con valores en cards
+- **Contenido**: Título, descripción, lista de problemas, valores (Clarity, Transparency, Security, Personalization)
+
+#### TeamSection
+
+- **Propósito**: Sección "Our team" con imagen de fundadores
+- **Características**: Imagen panorámica superior, texto descriptivo inferior
+- **Contenido**: Título, imagen de equipo, descripción repetida sobre el crecimiento desde 2020
+
+#### MediaPresence
+
+- **Propósito**: Sección "Certifications and affiliations" con logos de medios
+- **Características**: Logos distribuidos uniformemente con espaciado
+- **Contenido**: Título, descripción de certificaciones, logos de Mallorca, EL PAÍS, The Olive Press
 
 ## 🌐 Internacionalización (i18n)
 
@@ -497,6 +556,10 @@ npm run preview
 - **Lazy loading**: Componentes y rutas
 - **Image optimization**: Optimización automática
 - **Font loading**: Optimizado con `font-display: swap`
+- **Hero components**: Componentes especializados para diferentes secciones
+- **Home components**: Componentes específicos para la página de inicio
+- **Form components**: Sistema de formularios con validación
+- **Design system**: Sistema completo de componentes reutilizables
 
 ---
 
@@ -504,7 +567,10 @@ npm run preview
 
 Para cualquier pregunta sobre la configuración o desarrollo, consulta la documentación oficial de [Nuxt](https://nuxt.com/docs) o contacta al equipo de desarrollo.
 
-**Versión**: 1.0.0  
+**Versión**: 1.2.0  
 **Última actualización**: 2024  
 **Framework**: Nuxt 4  
-**Lenguaje**: TypeScript + Vue 3
+**Lenguaje**: TypeScript + Vue 3  
+**Hero Components**: 3 componentes especializados  
+**Home Components**: 3 componentes especializados  
+**Form Components**: Sistema de formularios con validación

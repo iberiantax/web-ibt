@@ -1312,6 +1312,44 @@
             </h3>
             <Form210Hero />
           </div>
+
+          <!-- AboutValues Component -->
+          <div class="mb-12">
+            <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">
+              AboutValues Component
+            </h3>
+            <AboutValues />
+          </div>
+
+          <!-- TeamSection Component -->
+          <div class="mb-12">
+            <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">
+              TeamSection Component
+            </h3>
+            <TeamSection />
+          </div>
+
+          <!-- MediaPresence Component -->
+          <div class="mb-12">
+            <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">
+              MediaPresence Component
+            </h3>
+            <MediaPresence />
+          </div>
+
+          <!-- BaseForm Component -->
+          <div class="mb-12">
+            <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">
+              BaseForm Component
+            </h3>
+            <div class="mx-auto max-w-2xl">
+              <BaseForm
+                title="Contact Us"
+                description="Get in touch with us for any questions or support."
+                @submit="handleFormSubmit"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1335,8 +1373,12 @@ import {
   BaseInfoCard,
   BaseVerticalCard,
   BaseReportsCard,
+  BaseForm,
 } from '~/components/shared/ui';
 import { ReferralHero, Form210Hero } from '~/components/hero';
+import AboutValues from '~/components/home/AboutValues.vue';
+import TeamSection from '~/components/home/TeamSection.vue';
+import MediaPresence from '~/components/home/MediaPresence.vue';
 import HowItWorks from '~/components/home/HowItWorks.vue';
 
 // Estado reactivo para los dropdowns
@@ -1486,6 +1528,20 @@ const handleSearch4 = (query: string) => {
     );
     searchLoading4.value = false;
   }, 500);
+};
+
+// Form submission handler
+const handleFormSubmit = (formData: {
+  name: string;
+  email: string;
+  subject: string;
+  category: string;
+  message: string;
+  recaptcha: boolean;
+}) => {
+  console.log('Form submitted:', formData);
+  // Aquí puedes agregar la lógica para enviar el formulario
+  alert('Form submitted successfully!');
 };
 </script>
 
