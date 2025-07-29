@@ -69,8 +69,8 @@ const handlePlanClick = (planIndex: number, event: MouseEvent) => {
 </script>
 
 <template>
-  <section class="bg-blue-700 py-16">
-    <div class="mx-auto px-1 sm:px-4 lg:px-6">
+  <section class="-mx-6 bg-blue-700 py-16">
+    <div class="mx-auto px-6 sm:px-12 lg:px-12">
       <!-- Título de la sección -->
       <div class="mb-12 text-center">
         <h2 class="text-3xl font-bold text-white lg:text-4xl">Which plan is right for you?</h2>

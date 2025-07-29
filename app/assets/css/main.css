@@ -255,4 +255,17 @@ body {
   .card {
     @apply rounded-lg border border-gray-200 bg-white p-6 shadow-md;
   }
+
+  /* Degradado personalizado */
+  .gradient-custom {
+    background: linear-gradient(90deg, #1364b3 0%, #32cfc6 100%);
+  }
+
+  .gradient-custom-vertical {
+    background: linear-gradient(180deg, #1364b3 0%, #32cfc6 100%);
+  }
+
+  .gradient-custom-diagonal {
+    background: linear-gradient(135deg, #1364b3 0%, #32cfc6 100%);
+  }
 }

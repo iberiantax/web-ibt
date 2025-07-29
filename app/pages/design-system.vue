@@ -1127,11 +1127,18 @@
           <!-- Banner solo con título -->
           <div class="mb-6">
             <h4 class="mb-2 text-lg font-medium">Banner with Title Only</h4>
-            <BaseBanner
-              :showDescription="false"
-              title="This banner only shows the title"
-              buttonText="Title Only"
-            />
+            <!-- Usar el componente fuera del padding del layout -->
+            <div class="-mx-8">
+              <div class="gradient-custom w-full p-4 sm:p-6">
+                <BaseBanner
+                  :showDescription="false"
+                  title="Will you get a refund or have to pay?"
+                  description="Whatever the outcome, we'll make sure you get the best possible result. Best of luck!"
+                  buttonText="Calculate result"
+                  backgroundColor="bg-white"
+                />
+              </div>
+            </div>
           </div>
         </section>
 

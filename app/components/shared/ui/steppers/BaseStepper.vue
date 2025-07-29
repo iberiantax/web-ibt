@@ -64,7 +64,7 @@ const handleStepClick = (stepIndex: number, event: MouseEvent) => {
             <div class="grid w-full grid-cols-1 items-center gap-28 md:grid-cols-2">
               <!-- Imagen a la izquierda (oculta en mobile) -->
               <div
-                class="hidden h-[300px] items-center justify-center rounded-lg bg-gray-200 md:flex"
+                class="hidden h-[320px] w-[412px] items-center justify-center rounded-lg bg-gray-200 md:flex"
               >
                 <div class="h-full w-full">
                   <img

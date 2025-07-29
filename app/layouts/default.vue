@@ -8,11 +8,15 @@ import AppFooter from '~/components/layout/AppFooter.vue';
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col bg-neutral-100">
-    <app-header />
+  <div class="flex min-h-screen flex-col bg-neutral-100">
+    <div class="px-6">
+      <app-header />
+    </div>
 
     <main class="flex-1 bg-neutral-100">
-      <slot />
+      <div class="px-6">
+        <slot />
+      </div>
     </main>
 
     <app-footer />

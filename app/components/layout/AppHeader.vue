@@ -70,7 +70,7 @@ onMounted(() => {
 
 <template>
   <header class="sticky top-0 z-50 bg-neutral-100">
-    <div class="mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto px-4  sm:px-6 lg:px-8">
       <div class="flex h-20 items-center justify-between py-2">
         <!-- Logo - Izquierda -->
         <div class="flex-shrink-0">

@@ -31,16 +31,16 @@ const handleButtonClick = (event: MouseEvent) => {
   <section class="bg-neutral-100 pb-8 pt-8">
     <div class="mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex w-full justify-center">
-        <div class="rounded-lg p-12 text-center" :class="backgroundColor">
+        <div class="w-full max-w-4xl rounded-lg p-12 text-center" :class="backgroundColor">
           <!-- Título -->
           <h2
-            class="mb-2 text-3xl lg:text-4xl font-bold leading-[48px] tracking-[0%] text-[#1364B3]"
+            class="mb-2 text-3xl font-bold leading-[48px] tracking-[0%] text-[#1364B3] lg:text-[40px]"
           >
             {{ title }}
           </h2>
 
           <!-- Descripción -->
-          <p class="mb-8 leading-relaxed text-base">
+          <p class="mb-8 text-base leading-relaxed">
             {{ description }}
           </p>
 

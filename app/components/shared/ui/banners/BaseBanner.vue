@@ -20,7 +20,7 @@ withDefaults(defineProps<Props>(), {
   buttonText: 'Calculate result',
   image: '',
   imageAlt: 'Banner image',
-  backgroundColor: 'bg-blue-100',
+  backgroundColor: 'bg-white',
   showArrow: true,
   showDescription: true,
 });
@@ -42,8 +42,16 @@ const handleButtonClick = (event: MouseEvent) => {
         <div v-if="image" class="h-12 w-12 overflow-hidden rounded-[8px] sm:h-16 sm:w-16">
           <img :src="image" :alt="imageAlt" class="h-full w-full object-cover" />
         </div>
-        <div v-else class="flex h-12 w-12 items-center justify-center rounded-[8px] bg-gray-200 sm:h-16 sm:w-16">
-          <svg class="h-6 w-6 text-gray-400 sm:h-8 sm:w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div
+          v-else
+          class="flex h-12 w-12 items-center justify-center rounded-[8px] bg-gray-200 sm:h-16 sm:w-16"
+        >
+          <svg
+            class="h-6 w-6 text-gray-400 sm:h-8 sm:w-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -66,7 +74,7 @@ const handleButtonClick = (event: MouseEvent) => {
       </div>
 
       <!-- Botón -->
-      <div class="flex-shrink-0 w-full sm:w-auto">
+      <div class="w-full flex-shrink-0 sm:w-auto">
         <BaseButton
           variant="primary"
           @click="handleButtonClick"
