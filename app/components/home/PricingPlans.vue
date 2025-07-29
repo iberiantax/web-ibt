@@ -97,7 +97,7 @@ const scrollToIndex = () => {
 </script>
 
 <template>
-  <section class="-mx-6 bg-blue-700 py-16 md:-mx-20 ">
+  <section class="-mx-6 bg-blue-700 py-16 md:-mx-20">
     <div class="mx-auto px-6 md:px-28">
       <!-- Título de la sección -->
       <div class="mb-12 text-center">
@@ -107,7 +107,7 @@ const scrollToIndex = () => {
       <!-- Selector de owners -->
       <div class="mb-12">
         <!-- Desktop -->
-        <div class="hidden justify-center space-x-4 md:flex">
+        <div class="hidden justify-center space-x-4 lg:flex">
           <button
             v-for="(owner, index) in owners"
             :key="index"
@@ -123,8 +123,8 @@ const scrollToIndex = () => {
           </button>
         </div>
 
-        <!-- Mobile - Grid 2x2 -->
-        <div class="md:hidden">
+        <!-- Mobile y Tablet - Grid 2x2 -->
+        <div class="lg:hidden">
           <div class="grid grid-cols-2 gap-3 px-4">
             <button
               v-for="(owner, index) in owners"
@@ -146,7 +146,7 @@ const scrollToIndex = () => {
       <!-- Cards de precios -->
       <div class="mb-16">
         <!-- Desktop -->
-        <div class="hidden grid-cols-1 gap-8 md:grid md:grid-cols-2 lg:grid-cols-4">
+        <div class="hidden grid-cols-1 gap-8 lg:grid lg:grid-cols-2 xl:grid-cols-4">
           <BaseCard
             v-for="(plan, index) in plans"
             :key="index"
@@ -161,8 +161,8 @@ const scrollToIndex = () => {
           />
         </div>
 
-        <!-- Mobile carrusel -->
-        <div class="px-4 md:hidden">
+        <!-- Mobile y Tablet carrusel -->
+        <div class="px-4 lg:hidden">
           <div class="relative">
             <div
               ref="containerRef"
@@ -172,7 +172,7 @@ const scrollToIndex = () => {
               <div
                 v-for="(plan, index) in plans"
                 :key="index"
-                class="w-full flex-shrink-0 snap-start"
+                class="w-full flex-shrink-0 snap-start md:w-2/3"
                 style="scroll-snap-align: start"
               >
                 <BaseCard
