@@ -9,18 +9,20 @@ interface Props {
   image?: string;
   imageAlt?: string;
   backgroundColor?: string;
+  gradientClass?: string;
   showArrow?: boolean;
   showDescription?: boolean;
 }
 
 withDefaults(defineProps<Props>(), {
-  title: 'Will you get a refund or have to pay?',
+  title: 'Will you get a refund or have to pay?Will you get a refund or have to pay? Whatever the outcome, we’ll make sure you get the best possible result. Best of luck!',
   description:
-    "Whatever the outcome, we'll make sure you get the best possible result. Best of luck!",
+    "",
   buttonText: 'Calculate result',
   image: '',
   imageAlt: 'Banner image',
   backgroundColor: 'bg-white',
+  gradientClass: '',
   showArrow: true,
   showDescription: true,
 });
@@ -35,19 +37,22 @@ const handleButtonClick = (event: MouseEvent) => {
 </script>
 
 <template>
-  <div class="w-full rounded-[8px] p-4 sm:rounded-[12px] sm:p-6" :class="backgroundColor">
-    <div class="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:justify-between">
+  <div
+    class="w-full rounded-[12px] p-8 sm:rounded-[12px] sm:p-6"
+    :class="[backgroundColor, gradientClass]"
+  >
+    <div class="flex flex-col items-center gap-6 sm:flex-row sm:items-center sm:justify-between">
       <!-- Imagen -->
-      <div class="flex-shrink-0">
-        <div v-if="image" class="h-12 w-12 overflow-hidden rounded-[8px] sm:h-16 sm:w-16">
+      <div class="w-full flex-shrink-0 sm:w-auto">
+        <div v-if="image" class="h-24 w-full overflow-hidden rounded-[16px]">
           <img :src="image" :alt="imageAlt" class="h-full w-full object-cover" />
         </div>
         <div
           v-else
-          class="flex h-12 w-12 items-center justify-center rounded-[8px] bg-gray-200 sm:h-16 sm:w-16"
+          class="flex h-32 w-full items-center justify-center rounded-[16px] bg-gray-200 sm:h-48 sm:w-48"
         >
           <svg
-            class="h-6 w-6 text-gray-400 sm:h-8 sm:w-8"
+            class="h-16 w-16 text-gray-400 sm:h-24 sm:w-24"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -56,7 +61,7 @@ const handleButtonClick = (event: MouseEvent) => {
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 00-2 2v12a2 2 0 00-2 2v12a2 2 0 002 2z"
             />
           </svg>
         </div>
@@ -65,23 +70,23 @@ const handleButtonClick = (event: MouseEvent) => {
       <!-- Contenido de texto -->
       <div class="flex-1 text-center sm:mx-6 sm:text-left">
         <h3
-          class="mb-1 font-bold text-[#1364B3]"
-          :class="showDescription ? 'text-sm sm:text-base' : 'text-lg sm:text-2xl'"
+          class="mb-2 font-bold text-[#1364B3]"
+          :class="showDescription ? 'text-lg sm:text-2xl' : 'text-xl sm:text-3xl'"
         >
           {{ title }}
         </h3>
-        <p v-if="showDescription" class="text-xs text-gray-700 sm:text-sm">{{ description }}</p>
+        <p v-if="showDescription" class="text-sm text-gray-700 sm:text-base">{{ description }}</p>
       </div>
 
       <!-- Botón -->
-      <div class="w-full flex-shrink-0 sm:w-auto">
+      <div class="flex flex-shrink-0 justify-center sm:justify-end">
         <BaseButton
           variant="primary"
           @click="handleButtonClick"
-          class="flex w-full items-center justify-center space-x-2 sm:w-auto"
+          class="flex items-center space-x-2 px-6 py-3"
         >
           <span class="text-sm sm:text-base">{{ buttonText }}</span>
-          <ArrowRight v-if="showArrow" class="h-3 w-3 sm:h-4 sm:w-4" />
+          <ArrowRight v-if="showArrow" class="h-4 w-4 sm:h-5 sm:w-5" />
         </BaseButton>
       </div>
     </div>

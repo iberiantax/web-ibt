@@ -53,7 +53,7 @@ const inputValue = computed({
 
 const inputClasses = computed(() => {
   const baseClasses = [
-    'w-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2',
+    'w-full transition-all duration-200 focus:outline-none focus:ring-[0.8px]',
     'border rounded-xl',
   ];
 
@@ -138,7 +138,7 @@ const handleClear = () => {
           v-if="clearable && inputValue"
           @click="handleClear"
           type="button"
-          class="text-gray-400 hover:text-gray-600 focus:outline-none"
+          class="rounded text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-[0.8px] focus:ring-gray-400"
         >
           <BaseIcon name="close" size="sm" />
         </button>

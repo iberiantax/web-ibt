@@ -38,9 +38,7 @@ const handleAdvancedReportClick = (item: ReportItem, index: number) => {
         <div class="flex flex-col items-center gap-8 xl:flex-row xl:gap-12">
           <!-- Imagen -->
           <div class="w-full max-w-md flex-shrink-0">
-            <div
-              class="aspect-[4/3] w-full overflow-hidden rounded-[16px] xl:aspect-square "
-            >
+            <div class="aspect-[4/3] w-full overflow-hidden rounded-[16px] xl:aspect-square">
               <img v-if="image" :src="image" :alt="imageAlt" class="h-full w-full object-cover" />
               <div v-else class="flex h-full w-full items-center justify-center bg-gray-200">
                 <svg

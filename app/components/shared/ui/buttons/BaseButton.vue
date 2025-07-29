@@ -22,7 +22,7 @@ const props = withDefaults(defineProps<Props>(), {
 // Clases dinámicas basadas en las props
 const buttonClasses = computed(() => {
   const baseClasses = [
-    'inline-flex items-center justify-center font-normal transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-[12px]',
+    'inline-flex items-center justify-center font-normal transition-all duration-200 focus:outline-none focus:ring-[0.8px] rounded-[12px]',
     props.fullWidth ? 'w-full' : '',
     props.disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer',
   ];

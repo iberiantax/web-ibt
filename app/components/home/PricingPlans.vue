@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Check } from 'lucide-vue-next';
-import { BaseCard, BaseCarousel } from '~/components/shared/ui';
+import { BaseCard } from '~/components/shared/ui';
 
 interface Plan {
   title: string;
@@ -52,6 +52,8 @@ const features: Feature[] = [
 
 const owners = ['1 owner', '2 owners', '3 owners', '4 owners'];
 const selectedOwner = ref(0);
+const currentCardIndex = ref(0);
+const containerRef = ref<HTMLElement>();
 
 const emit = defineEmits<{
   ownerChange: [index: number];
@@ -66,11 +68,37 @@ const handleOwnerChange = (index: number) => {
 const handlePlanClick = (planIndex: number, event: MouseEvent) => {
   emit('planClick', planIndex, event);
 };
+
+// Funciones para navegación de cards en móvil
+const goPrev = () => {
+  if (currentCardIndex.value > 0) {
+    currentCardIndex.value--;
+    scrollToIndex();
+  }
+};
+
+const goNext = () => {
+  if (currentCardIndex.value < plans.length - 1) {
+    currentCardIndex.value++;
+    scrollToIndex();
+  }
+};
+
+const scrollToIndex = () => {
+  if (containerRef.value) {
+    const cardWidth = containerRef.value.scrollWidth / plans.length;
+    const scrollAmount = currentCardIndex.value * cardWidth;
+    containerRef.value.scrollTo({
+      left: scrollAmount,
+      behavior: 'smooth',
+    });
+  }
+};
 </script>
 
 <template>
-  <section class="-mx-6 bg-blue-700 py-16">
-    <div class="mx-auto px-6 sm:px-12 lg:px-12">
+  <section class="-mx-6 bg-blue-700 py-16 md:-mx-20 ">
+    <div class="mx-auto px-6 md:px-28">
       <!-- Título de la sección -->
       <div class="mb-12 text-center">
         <h2 class="text-3xl font-bold text-white lg:text-4xl">Which plan is right for you?</h2>
@@ -87,37 +115,31 @@ const handlePlanClick = (planIndex: number, event: MouseEvent) => {
             :class="[
               'font-base rounded-[12px] px-6 py-2 transition-colors',
               selectedOwner === index
-                ? 'bg-white text-[#00]'
-                : 'border border-white text-white hover:bg-white hover:text-[#1364B3]',
+                ? 'bg-white text-[#1364B3]'
+                : 'border border-white text-white',
             ]"
           >
             {{ owner }}
           </button>
         </div>
 
-        <!-- Mobile carrusel -->
-        <div class="px-4 md:hidden">
-          <BaseCarousel
-            :items="owners"
-            :show-items="2"
-            :gap="4"
-            :show-arrows="false"
-            :show-dots="true"
-          >
-            <template #default="{ item, index }">
-              <button
-                @click="handleOwnerChange(index)"
-                :class="[
-                  'whitespace-nowrap rounded-[12px] px-4 py-3 font-medium transition-colors',
-                  selectedOwner === index
-                    ? 'bg-white text-[#1364B3]'
-                    : 'border border-white text-white hover:bg-white hover:text-[#1364B3]',
-                ]"
-              >
-                {{ item }}
-              </button>
-            </template>
-          </BaseCarousel>
+        <!-- Mobile - Grid 2x2 -->
+        <div class="md:hidden">
+          <div class="grid grid-cols-2 gap-3 px-4">
+            <button
+              v-for="(owner, index) in owners"
+              :key="index"
+              @click="handleOwnerChange(index)"
+              :class="[
+                'whitespace-nowrap rounded-[12px] px-4 py-3 font-medium transition-colors',
+                selectedOwner === index
+                  ? 'bg-white text-[#1364B3]'
+                  : 'border border-white text-white hover:bg-white hover:text-[#1364B3]',
+              ]"
+            >
+              {{ owner }}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -142,7 +164,11 @@ const handlePlanClick = (planIndex: number, event: MouseEvent) => {
         <!-- Mobile carrusel -->
         <div class="px-4 md:hidden">
           <div class="relative">
-            <div class="scrollbar-hide flex snap-x snap-mandatory gap-4 overflow-x-auto">
+            <div
+              ref="containerRef"
+              class="flex snap-x snap-mandatory gap-4 overflow-x-auto"
+              style="scrollbar-width: none; -ms-overflow-style: none"
+            >
               <div
                 v-for="(plan, index) in plans"
                 :key="index"
@@ -162,14 +188,36 @@ const handlePlanClick = (planIndex: number, event: MouseEvent) => {
               </div>
             </div>
 
-            <!-- Dots indicator -->
-            <div class="mt-4 flex justify-center space-x-2">
+            <!-- Flechas de navegación (como en HappyClients) -->
+            <div class="mt-6 flex justify-end space-x-2">
               <button
-                v-for="(plan, index) in plans"
-                :key="index"
-                class="h-2 w-2 rounded-full transition-all"
-                :class="index === 0 ? 'bg-blue-600' : 'bg-gray-300 hover:bg-gray-400'"
-              />
+                @click="goPrev"
+                :disabled="currentCardIndex === 0"
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-white bg-white text-black transition-all hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+              <button
+                @click="goNext"
+                :disabled="currentCardIndex >= plans.length - 1"
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-white bg-white text-black transition-all hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -200,3 +248,10 @@ const handlePlanClick = (planIndex: number, event: MouseEvent) => {
     </div>
   </section>
 </template>
+
+<style scoped>
+/* Ocultar scrollbar en móvil */
+.overflow-x-auto::-webkit-scrollbar {
+  display: none;
+}
+</style>

@@ -51,7 +51,7 @@ const handleToggle = () => {
 
 const checkboxClasses = computed(() => {
   const baseClasses = [
-    'flex items-center justify-between w-full rounded-xl border transition-all duration-200 cursor-pointer focus:outline-none',
+    'flex items-center justify-between w-full rounded-xl border transition-all duration-200 cursor-pointer focus:outline-none focus:ring-[0.8px]',
   ];
 
   // Clases por tamaño
@@ -63,10 +63,10 @@ const checkboxClasses = computed(() => {
 
   // Clases por variante
   const variantClasses = {
-    default: 'bg-gray-50 border-gray-300 hover:bg-gray-100',
-    white: 'bg-white border-gray-300 hover:bg-gray-50',
-    blue: 'bg-blue-50 border-blue-500 hover:bg-blue-100',
-    dark: 'bg-blue-900 border-white hover:bg-blue-800',
+    default: 'bg-gray-50 border-gray-300 hover:bg-gray-100 focus:ring-[#1364B3]',
+    white: 'bg-white border-gray-300 hover:bg-gray-50 focus:ring-[#1364B3]',
+    blue: 'bg-blue-50 border-blue-500 hover:bg-blue-100 focus:ring-[#1364B3]',
+    dark: 'bg-blue-900 border-white hover:bg-blue-800 focus:ring-[#1364B3]',
   };
 
   // Clases de estado

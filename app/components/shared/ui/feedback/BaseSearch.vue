@@ -56,7 +56,10 @@ const currentValue = computed({
 });
 
 const searchClasses = computed(() => {
-  const baseClasses = ['w-full transition-all duration-200', 'border rounded-xl'];
+  const baseClasses = [
+    'w-full transition-all duration-200 focus:outline-none focus:ring-[0.8px]',
+    'border rounded-xl',
+  ];
 
   // Clases por tamaño
   const sizeClasses = {
@@ -69,18 +72,18 @@ const searchClasses = computed(() => {
   const variantClasses = showResults.value
     ? {}
     : {
-        default: 'border-gray-300',
-        error: 'border-red-300',
-        success: 'border-green-300',
-        white: 'bg-white border-gray-300',
-        blue: 'bg-blue-50 border-blue-500',
+        default: 'border-gray-300 focus:ring-[#1364B3] focus:border-[#1364B3]',
+        error: 'border-red-300 focus:ring-red-500 focus:border-red-500',
+        success: 'border-green-300 focus:ring-green-500 focus:border-green-500',
+        white: 'bg-white border-gray-300 focus:ring-[#1364B3] focus:border-[#1364B3]',
+        blue: 'bg-blue-50 border-blue-500 focus:ring-[#1364B3] focus:border-[#1364B3]',
       };
 
   // Clases de estado
   const stateClasses = [
     props.disabled ? 'cursor-not-allowed opacity-50' : '',
     props.readonly ? 'bg-gray-50' : '',
-    showResults.value ? 'border-[#1364B3]' : '',
+    showResults.value ? 'border-[#1364B3] focus:ring-[#1364B3]' : '',
   ];
 
   // Clases de variante cuando hay resultados
@@ -186,7 +189,7 @@ onMounted(() => {
           v-if="currentValue"
           @click="handleClear"
           type="button"
-          class="text-gray-400 hover:text-gray-600 focus:outline-none"
+          class="rounded text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-[0.8px] focus:ring-gray-400"
         >
           <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
@@ -230,7 +233,7 @@ onMounted(() => {
           v-for="result in searchResults"
           :key="result.id"
           @click="handleSelectResult(result)"
-          class="mb-2 w-full text-left transition-colors duration-150 last:mb-0 focus:outline-none"
+          class="mb-2 w-full rounded text-left transition-colors duration-150 last:mb-0 focus:outline-none focus:ring-[0.8px] focus:ring-gray-400"
         >
           <div class="rounded-xl bg-blue-100 p-3">
             <div class="mb-1">

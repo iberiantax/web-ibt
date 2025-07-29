@@ -1101,42 +1101,15 @@
         <section class="mb-8">
           <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">BaseBanner</h3>
 
-          <!-- Banner por defecto -->
-          <div class="mb-6">
-            <h4 class="mb-2 text-lg font-medium">Default Banner</h4>
-            <BaseBanner />
-          </div>
-
           <!-- Banner con imagen -->
           <div class="mb-6">
             <h4 class="mb-2 text-lg font-medium">Banner with Image</h4>
-            <BaseBanner image="/images/hero/FrameHero.png" imageAlt="Modern living room" />
-          </div>
-
-          <!-- Banner con fondo personalizado -->
-          <div class="mb-6">
-            <h4 class="mb-2 text-lg font-medium">Custom Background</h4>
-            <BaseBanner
-              backgroundColor="bg-green-100"
-              title="Custom Title"
-              description="This is a custom banner with different background color"
-              buttonText="Custom Button"
-            />
-          </div>
-
-          <!-- Banner solo con título -->
-          <div class="mb-6">
-            <h4 class="mb-2 text-lg font-medium">Banner with Title Only</h4>
-            <!-- Usar el componente fuera del padding del layout -->
-            <div class="-mx-8">
-              <div class="gradient-custom w-full p-4 sm:p-6">
-                <BaseBanner
-                  :showDescription="false"
-                  title="Will you get a refund or have to pay?"
-                  description="Whatever the outcome, we'll make sure you get the best possible result. Best of luck!"
-                  buttonText="Calculate result"
-                  backgroundColor="bg-white"
-                />
+            <!-- Contenedor que se extiende completamente -->
+            <div class="relative -mx-28">
+              <div class="gradient-custom w-full">
+                <div class="p-24">
+                  <BaseBanner image="/images/hero/FrameHero.png" imageAlt="Modern living room" />
+                </div>
               </div>
             </div>
           </div>
@@ -1302,6 +1275,29 @@
           </div>
         </section>
 
+        <!-- BaseResultsCard -->
+        <section class="mb-8">
+          <h3 class="mb-6 text-center text-h3-m font-medium text-neutral-700">BaseResultsCard</h3>
+
+          <!-- Ejemplo por defecto -->
+          <div class="mb-6">
+            <h4 class="mb-2 text-lg font-medium">Default Results Card</h4>
+            <div class="mx-auto max-w-xl">
+              <BaseResultsCard
+                title="Results"
+                :results="[
+                  { label: 'Tax base', value: '3.850,00 €' },
+                  { label: 'Tax rate', value: '19 %' },
+                  { label: 'Tax Liability', value: '731,50 €', isHighlighted: true },
+                ]"
+                buttonText="Start tax returns"
+                buttonVariant="primary"
+                @button-click="handleResultsClick"
+              />
+            </div>
+          </div>
+        </section>
+
         <!-- Hero Components -->
         <div class="mt-16">
           <!-- ReferralHero Component -->
@@ -1380,6 +1376,7 @@ import {
   BaseInfoCard,
   BaseVerticalCard,
   BaseReportsCard,
+  BaseResultsCard,
   BaseForm,
 } from '~/components/shared/ui';
 import { ReferralHero, Form210Hero } from '~/components/hero';
@@ -1549,6 +1546,12 @@ const handleFormSubmit = (formData: {
   console.log('Form submitted:', formData);
   // Aquí puedes agregar la lógica para enviar el formulario
   alert('Form submitted successfully!');
+};
+
+// Results card handler
+const handleResultsClick = (event: MouseEvent) => {
+  console.log('Results card clicked:', event);
+  alert('Results card clicked!');
 };
 </script>
 

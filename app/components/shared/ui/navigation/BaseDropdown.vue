@@ -61,7 +61,7 @@ const currentValue = computed({
 
 const dropdownClasses = computed(() => {
   const baseClasses = [
-    'w-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2',
+    'w-full transition-all duration-200 focus:outline-none focus:ring-[0.8px]',
     'border rounded-xl cursor-pointer',
   ];
 
@@ -192,7 +192,7 @@ onMounted(() => {
           v-if="clearable && currentValue"
           @click="handleClear"
           type="button"
-          class="mr-2 text-gray-400 hover:text-gray-600 focus:outline-none"
+          class="mr-2 rounded text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-[0.8px] focus:ring-gray-400"
         >
           <BaseIcon name="close" size="sm" />
         </button>
@@ -221,7 +221,7 @@ onMounted(() => {
             v-for="option in options"
             :key="option.value"
             @click="handleSelectOption(option)"
-            class="w-full px-4 py-2 text-left text-sm transition-colors duration-150 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+            class="w-full px-4 py-2 text-left text-sm transition-colors duration-150 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-[0.8px] focus:ring-gray-400"
             :class="{
               'bg-blue-50 text-blue-600': option.value === currentValue,
               'text-gray-900': option.value !== currentValue,

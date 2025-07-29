@@ -63,7 +63,7 @@ const getSegmentClasses = (segment: Segment) => {
 
   // Clases base
   const baseClasses = [
-    'flex-1 text-center font-medium transition-all duration-200 rounded-md mx-0',
+    'flex-1 text-center font-medium transition-all duration-200 rounded-md mx-0 focus:outline-none focus:ring-[0.8px]',
     props.disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer',
   ];
 
@@ -79,15 +79,15 @@ const getSegmentClasses = (segment: Segment) => {
 
   if (props.variant === 'light') {
     if (isSelected) {
-      stateClasses = ['bg-[#DDEBFD] text-black border border-[#1364B3]'];
+      stateClasses = ['bg-[#DDEBFD] text-black border border-[#1364B3] focus:ring-[#1364B3]'];
     } else {
-      stateClasses = ['bg-transparent text-black border border-[#1364B3]'];
+      stateClasses = ['bg-transparent text-black border border-[#1364B3] focus:ring-[#1364B3]'];
     }
   } else if (props.variant === 'dark') {
     if (isSelected) {
-      stateClasses = ['bg-white text-black border border-[#1364B3]'];
+      stateClasses = ['bg-white text-black border border-[#1364B3] focus:ring-[#1364B3]'];
     } else {
-      stateClasses = ['bg-[#1F3F6B] text-white border border-white'];
+      stateClasses = ['bg-[#1F3F6B] text-white border border-white focus:ring-[#1364B3]'];
     }
   }
 

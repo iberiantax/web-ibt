@@ -40,9 +40,9 @@ const handleStepClick = (stepIndex: number, event: MouseEvent) => {
 
       <!-- Timeline vertical centrado -->
       <div class="relative mx-auto max-w-4xl">
-        <!-- Línea vertical del timeline (centrada en desktop, izquierda en mobile) -->
+        <!-- Línea vertical del timeline (siempre a la izquierda hasta 1201px) -->
         <div
-          class="absolute bottom-0 left-0 top-0 w-1 bg-[#1364B3] md:left-1/2 md:-translate-x-1/2 md:transform"
+          class="absolute bottom-0 left-0 top-0 w-1 bg-[#1364B3] l:left-1/2 l:-translate-x-1/2 l:transform"
         ></div>
 
         <!-- Pasos -->
@@ -53,18 +53,18 @@ const handleStepClick = (stepIndex: number, event: MouseEvent) => {
             class="relative flex items-center"
             @click="handleStepClick(index, $event)"
           >
-            <!-- Nodo del timeline centrado sobre la línea -->
+            <!-- Nodo del timeline (siempre a la izquierda hasta 1201px) -->
             <div
-              class="absolute left-0 z-10 flex h-[50px] w-[50px] -translate-x-1/2 transform items-center justify-center rounded-full bg-[#1364B3] md:left-1/2"
+              class="absolute left-0 z-10 flex h-[50px] w-[50px] -translate-x-1/2 transform items-center justify-center rounded-full bg-[#1364B3] l:left-1/2"
             >
               <span class="text-2xl font-bold leading-none text-white">{{ step.number }}</span>
             </div>
 
             <!-- Contenido del paso -->
-            <div class="grid w-full grid-cols-1 items-center gap-28 md:grid-cols-2">
-              <!-- Imagen a la izquierda (oculta en mobile) -->
+            <div class="grid w-full grid-cols-1 items-center gap-28 l:grid-cols-2">
+              <!-- Imagen a la izquierda (oculta hasta 1201px) -->
               <div
-                class="hidden h-[320px] w-[412px] items-center justify-center rounded-lg bg-gray-200 md:flex"
+                class="hidden h-[320px] w-[412px] items-center justify-center rounded-lg bg-gray-200 l:flex"
               >
                 <div class="h-full w-full">
                   <img
@@ -75,8 +75,8 @@ const handleStepClick = (stepIndex: number, event: MouseEvent) => {
                 </div>
               </div>
 
-              <!-- Contenido a la derecha (en mobile ocupa todo el ancho) -->
-              <div class="col-span-full ml-16 space-y-3 md:col-span-1 md:ml-0">
+              <!-- Contenido a la derecha (siempre ocupa todo el ancho hasta 1201px) -->
+              <div class="col-span-full ml-16 space-y-3 l:col-span-1 l:ml-0">
                 <!-- Tiempo -->
                 <div class="flex items-center space-x-2">
                   <svg
@@ -111,7 +111,7 @@ const handleStepClick = (stepIndex: number, event: MouseEvent) => {
           <!-- Checkmark final -->
           <div v-if="showCheckmark" class="relative flex items-center">
             <div
-              class="absolute left-0 z-10 flex h-[50px] w-[50px] -translate-x-1/2 transform items-center justify-center rounded-full bg-[#1364B3] md:left-1/2"
+              class="absolute left-0 z-10 flex h-[50px] w-[50px] -translate-x-1/2 transform items-center justify-center rounded-full bg-[#1364B3] l:left-1/2"
             >
               <svg class="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path

@@ -89,7 +89,7 @@ const handleRemove = () => {
     <button
       v-if="removable"
       @click="handleRemove"
-      class="-mr-1 ml-1.5 inline-flex h-4 w-4 items-center justify-center rounded-full text-gray-400 hover:bg-gray-100 hover:text-gray-600 focus:bg-gray-100 focus:outline-none"
+      class="-mr-1 ml-1.5 inline-flex h-4 w-4 items-center justify-center rounded-full text-gray-400 hover:bg-gray-100 hover:text-gray-600 focus:bg-gray-100 focus:outline-none focus:ring-[0.8px] focus:ring-gray-400"
     >
       <BaseIcon name="close" size="xs" />
     </button>
