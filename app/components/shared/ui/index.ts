@@ -24,3 +24,6 @@ export * from './layout';
 
 // Buttons
 export * from './buttons';
+
+// Sections
+export * from './sections';

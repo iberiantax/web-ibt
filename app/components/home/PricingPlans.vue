@@ -97,8 +97,8 @@ const scrollToIndex = () => {
 </script>
 
 <template>
-  <section class="-mx-6 bg-blue-700 py-16 md:-mx-20">
-    <div class="mx-auto px-6 md:px-28">
+  <section class="-mx-6 bg-blue-700 py-16 md:-mx-36">
+    <div class="mx-auto px-6 md:px-36">
       <!-- Título de la sección -->
       <div class="mb-12 text-center">
         <h2 class="text-3xl font-bold text-white lg:text-4xl">Which plan is right for you?</h2>

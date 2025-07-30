@@ -60,10 +60,7 @@ const currentValue = computed({
 });
 
 const textareaClasses = computed(() => {
-  const baseClasses = [
-    'w-full transition-all duration-200 focus:outline-none focus:ring-[0.8px]',
-    'border rounded-xl',
-  ];
+  const baseClasses = ['w-full focus:outline-none', 'border rounded-xl'];
 
   // Clases por tamaño
   const sizeClasses = {
@@ -74,12 +71,12 @@ const textareaClasses = computed(() => {
 
   // Clases por variante
   const variantClasses = {
-    default: 'border-gray-300 focus:ring-[#1364B3] focus:border-[#1364B3]',
-    error: 'border-red-300 focus:ring-red-500 focus:border-red-500',
-    success: 'border-green-300 focus:ring-green-500 focus:border-green-500',
-    white: 'bg-white border-gray-300 focus:ring-[#1364B3] focus:border-[#1364B3]',
-    blue: 'bg-blue-50 border-blue-500 focus:ring-[#1364B3] focus:border-[#1364B3]',
-    form: 'bg-white border-blue-500 focus:ring-[#1364B3] focus:border-[#1364B3]',
+    default: 'border-gray-300 focus:border-2 focus:border-[#1364B3]',
+    error: 'border-red-300 focus:border-2 focus:border-red-500',
+    success: 'border-green-300 focus:border-2 focus:border-green-500',
+    white: 'bg-white border-gray-300 focus:border-2 focus:border-[#1364B3]',
+    blue: 'bg-blue-50 border-blue-500 focus:border-2 focus:border-[#1364B3]',
+    form: 'bg-white border-blue-500 focus:border-2 focus:border-[#1364B3]',
   };
 
   // Clases de estado

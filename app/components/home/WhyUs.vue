@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { BaseFeatureCard } from '~/components/shared/ui';
+
 interface Feature {
   icon: string;
   title: string;
@@ -55,7 +57,7 @@ const handleCardClick = (index: number, event: MouseEvent) => {
 
 <template>
   <section class="bg-neutral-100 py-8">
-    <div class=" mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Título de la sección -->
       <div class="mb-12 text-center">
         <h2 class="text-3xl font-bold text-[#1364B3] lg:text-4xl">Why us?</h2>
@@ -63,27 +65,14 @@ const handleCardClick = (index: number, event: MouseEvent) => {
 
       <!-- Grid de cards -->
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <div
+        <BaseFeatureCard
           v-for="(feature, index) in features"
           :key="index"
-          class="cursor-pointer rounded-lg bg-white p-8"
+          :icon="feature.icon"
+          :title="feature.title"
+          :description="feature.description"
           @click="handleCardClick(index, $event)"
-        >
-          <!-- Icono -->
-          <div class="mb-6 flex justify-start">
-            <img :src="feature.icon" :alt="feature.title" class="h-10 w-10" />
-          </div>
-
-          <!-- Título -->
-          <h3 class="mb-4 text-start text-[28px] font-bold text-[#1364B3]">
-            {{ feature.title }}
-          </h3>
-
-          <!-- Descripción -->
-          <p class="text-start text-base leading-relaxed text-gray-700">
-            {{ feature.description }}
-          </p>
-        </div>
+        />
       </div>
     </div>
   </section>

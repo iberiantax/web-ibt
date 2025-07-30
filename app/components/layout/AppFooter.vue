@@ -7,8 +7,8 @@ const localePath = useLocalePath()
 </script>
 
 <template>
-  <footer class="rounded-t-[80px] bg-[#1364B3] text-white">
-    <div class="mx-auto px-4 sm:px-6 lg:px-8">
+  <footer class="rounded-t-[80px] bg-[#1364B3] text-white ">
+    <div class="mx-auto px-4 sm:px-6 lg:px-44">
       <!-- Top Section: Logo and Tagline -->
       <div class="pt-8 pb-3 text-center sm:py-12">
         <div class="mb-3 flex items-center justify-center sm:mb-4">
