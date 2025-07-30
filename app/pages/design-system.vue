@@ -1123,7 +1123,7 @@
 
           <div class="mb-6">
             <h4 class="mb-6 text-lg font-medium">Stepper Horizontal</h4>
-            <BaseStepperHorizontal
+            <BaseStepperVertical
               :steps="[
                 {
                   number: 1,
@@ -1152,7 +1152,7 @@
         <section class="mb-8 mt-12">
           <div class="mb-6">
             <h4 class="mb-2 text-lg font-medium">Stepper Vertical</h4>
-            <BaseStepperVertical
+            <BaseStepperHorizontal
               title=""
               :steps="[
                 {
@@ -1371,8 +1371,8 @@ import {
   BaseSegmentedControl,
   BaseCard,
   BaseBanner,
-  BaseStepperHorizontal,
   BaseStepperVertical,
+  BaseStepperHorizontal,
   BaseInfoCard,
   BaseVerticalCard,
   BaseReportsCard,
@@ -1380,9 +1380,9 @@ import {
   BaseForm,
 } from '~/components/shared/ui';
 import { ReferralHero, Form210Hero } from '~/components/hero';
-import AboutValues from '~/components/home/AboutValues.vue';
-import TeamSection from '~/components/home/TeamSection.vue';
-import MediaPresence from '~/components/home/MediaPresence.vue';
+import AboutValues from '~/components/about/AboutValues.vue';
+import TeamSection from '~/components/about/TeamSection.vue';
+import MediaPresence from '~/components/about/MediaPresence.vue';
 import HowItWorks from '~/components/home/HowItWorks.vue';
 
 // Estado reactivo para los dropdowns

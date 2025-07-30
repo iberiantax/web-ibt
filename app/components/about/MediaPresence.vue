@@ -70,18 +70,8 @@ const scrollToIndex = () => {
       <!-- Título principal -->
       <div class="mb-6">
         <h2 class="text-3xl font-bold text-[#1364B3] lg:text-4xl">
-          Certifications and affiliations
+          Media Presence
         </h2>
-      </div>
-
-      <div class="mb-12">
-        <p class="text-base leading-relaxed text-neutral-700">
-          IberianTax is an official partner of the Spanish Tax Agency (Agencia Tributaria) and a
-          member of AEDAF, the Spanish Association of Tax Advisors. This collaboration ensures our
-          services meet the highest standards of compliance, reliability, and expertise. We work
-          closely with authorities to make tax filing simpler, safer, and fully aligned with Spanish
-          regulations.
-        </p>
       </div>
 
       <!-- Carrusel de logos -->

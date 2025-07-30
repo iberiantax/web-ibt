@@ -1,8 +1,9 @@
 <script setup lang="ts">
-// Iconos personalizados para redes sociales
 import FacebookIcon from '@/components/shared/icons/FacebookIcon.vue';
 import InstagramIcon from '@/components/shared/icons/InstagramIcon.vue';
 import LinkedinIcon from '@/components/shared/icons/LinkedinIcon.vue';
+
+const localePath = useLocalePath()
 </script>
 
 <template>
@@ -52,7 +53,7 @@ import LinkedinIcon from '@/components/shared/icons/LinkedinIcon.vue';
               </li>
               <li>
                 <NuxtLink
-                  to="/partners"
+                  to="/app/pages/referralProgram"
                   class="text-xs text-white transition-colors duration-200 hover:text-neutral-200 sm:text-base"
                 >
                   Partners
@@ -221,7 +222,7 @@ import LinkedinIcon from '@/components/shared/icons/LinkedinIcon.vue';
                 </li>
                 <li>
                   <NuxtLink
-                    to="/partners"
+                    to="/app/pages/referralProgram"
                     class="text-xs text-white transition-colors duration-200 hover:text-neutral-200 sm:text-base"
                   >
                     Partners
@@ -377,7 +378,7 @@ import LinkedinIcon from '@/components/shared/icons/LinkedinIcon.vue';
               <li>
                 <NuxtLink
                   to="/about"
-                  class="text-xs text-white transition-colors duration-200 hover:text-neutral-200 sm:text-base"
+                  class="text-xs text-white transition-colors duration-200 hover:text-neutral-200 sm:text-base hover:underline"
                 >
                   About
                 </NuxtLink>
@@ -385,22 +386,22 @@ import LinkedinIcon from '@/components/shared/icons/LinkedinIcon.vue';
               <li>
                 <NuxtLink
                   to="/contact"
-                  class="text-xs text-white transition-colors duration-200 hover:text-neutral-200 sm:text-base"
+                  class="text-xs text-white transition-colors duration-200 hover:text-neutral-200 sm:text-base hover:underline"
                 >
                   Contact
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink
-                  to="/partners"
-                  class="text-xs text-white transition-colors duration-200 hover:text-neutral-200 sm:text-base"
+                  to="/app/pages/referralProgram"
+                  class="text-xs text-white transition-colors duration-200 hover:text-neutral-200 sm:text-base hover:underline"
                 >
                   Partners
                 </NuxtLink>
               </li>
               <li>
                 <NuxtLink
-                  to="/referral-program"
+                    :to="localePath({ name: 'referralProgram' })"
                   class="text-xs text-white transition-colors duration-200 hover:text-neutral-200 sm:text-base"
                 >
                   Referral program

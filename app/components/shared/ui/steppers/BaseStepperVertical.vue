@@ -11,7 +11,7 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-  title: 'HOW IT WORKS!',
+  title: 'Common Reasons',
 });
 
 const emit = defineEmits<{
@@ -24,43 +24,24 @@ const handleStepClick = (stepIndex: number, event: MouseEvent) => {
 </script>
 
 <template>
-  <section class="bg-neutral-100 py-12">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Título de la sección -->
-      <div class="mb-12 text-center">
-        <h2 class="text-3xl font-bold text-[#1364B3] lg:text-4xl">
-          {{ title }}
-        </h2>
+  <div class="space-y-4">
+    <div
+      v-for="(step, index) in steps"
+      :key="index"
+      class="flex items-stretch space-x-4 justify-start pb-5"
+      @click="handleStepClick(index, $event)"
+    >
+      <div
+        class="flex text-4xl h-[55px] w-[55px] flex-shrink-0 items-center justify-center rounded-full bg-[#1364B3] font-bold text-white"
+      >
+        {{ step.number }}
       </div>
-
-      <!-- Pasos verticales en grid -->
-      <div class="mx-auto max-w-6xl">
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-          <div
-            v-for="(step, index) in steps"
-            :key="index"
-            class="flex cursor-pointer flex-col items-start"
-            @click="handleStepClick(index, $event)"
-          >
-            <!-- Círculo con número -->
-            <div
-              class="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#1364B3] text-2xl font-bold text-white"
-            >
-              {{ step.number }}
-            </div>
-
-            <!-- Contenido de texto -->
-            <div class="max-w-xs">
-              <h3 class="mb-4 text-xl font-bold text-gray-900">
-                {{ step.title }}
-              </h3>
-              <p class="text-base text-gray-700">
-                {{ step.description }}
-              </p>
-            </div>
-          </div>
-        </div>
+      <div>
+        <h3 class="mb-2 text-base font-bold text-gray-900">{{ step.title }}</h3>
+        <p class="text-base text-gray-700">
+          {{ step.description }}
+        </p>
       </div>
     </div>
-  </section>
+  </div>
 </template>

@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ArrowRight } from 'lucide-vue-next';
 import BaseButton from '~/components/shared/ui/buttons/BaseButton.vue';
+import {useI18n} from "vue-i18n";
+
+const {t} = useI18n()
 
 defineOptions({
   name: 'HeroSection',
@@ -15,7 +18,7 @@ defineOptions({
         <div class="space-y-4 lg:col-span-3">
           <!-- Título principal -->
           <h1 class="text-[48px] font-bold leading-tight text-[#1364B3]">
-            We handle your non-resident Spanish taxes
+            {{ t('home.We handle your non-resident Spanish taxes') }}
           </h1>
 
           <!-- Descripción -->

@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import {useI18n} from "vue-i18n";
+import AboutValues from "~/components/about/AboutValues.vue";
+import MediaPresence from "~/components/about/MediaPresence.vue";
+import OurNumbers from "~/components/about/OurNumbers.vue";
+import TeamSection from "~/components/about/TeamSection.vue";
+import CertificationsAffiliations from "~/components/about/CertificationsAffiliations.vue";
+import FileNowCard from "~/components/home/FileNowCard.vue";
 
-const {t} = useI18n()
 
 useHead({
   title: 'IberianTax - About',
@@ -14,9 +18,11 @@ useHead({
 </script>
 
 <template>
-  <h1>{{ t('about.welcome') }}</h1>
+  <about-header-simple-image></about-header-simple-image>
+  <about-values></about-values>
+  <certifications-affiliations></certifications-affiliations>
+  <our-numbers></our-numbers>
+  <team-section></team-section>
+  <media-presence></media-presence>
+  <file-now-card></file-now-card>
 </template>
-
-<style scoped>
-
-</style>

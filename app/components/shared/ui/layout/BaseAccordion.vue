@@ -42,7 +42,7 @@ const headerClasses = computed(() => {
 
   // Clases por variante para el header
   const variantClasses = {
-    primary: 'bg-white hover:bg-gray-50',
+    primary: 'bg-white hover:bg-blue-100',
     secondary: 'bg-blue-50 hover:bg-blue-100',
   };
 
