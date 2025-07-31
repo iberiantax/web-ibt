@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import {BaseCard} from "~/components/shared/ui";
+import {BaseCardFull} from "~/components/shared/ui";
 </script>
 
 <template>
@@ -10,21 +10,21 @@ import {BaseCard} from "~/components/shared/ui";
   </div>
 
   <div class="flex justify-center py-8 gap-8">
-    <BaseCard
+    <BaseCardFull
         type="default-white"
         title="Annual Tax Calculator"
         description="Own a property in Spain? Use our tax tool to calculate how much you have to pay in your annual non-resident tax return in Spain."
         buttonText="Try now"
         buttonVariant="outline"
     />
-    <BaseCard
+    <BaseCardFull
         type="default-white"
         title="Annual Tax Calculator"
         description="Own a property in Spain? Use our tax tool to calculate how much you have to pay in your annual non-resident tax return in Spain."
         buttonText="Try now"
         buttonVariant="outline"
     />
-    <BaseCard
+    <BaseCardFull
         type="default-white"
         title="Annual Tax Calculator"
         description="Own a property in Spain? Use our tax tool to calculate how much you have to pay in your annual non-resident tax return in Spain."

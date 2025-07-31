@@ -60,7 +60,7 @@ const handleAdvancedReportClick = (item: ReportItem, index: number) => {
 
           <!-- Contenido de texto -->
           <div class="w-full flex-1">
-            <h2 class="mb-4 text-2xl font-bold text-[#1364B3] sm:text-3xl xl:text-4xl">
+            <h2 class="mb-4 text-2xl font-bold text-blue-500 sm:text-3xl xl:text-4xl">
               {{ title }}
             </h2>
             <p class="mb-6 text-sm text-gray-700 sm:text-base xl:mb-8">
@@ -71,7 +71,7 @@ const handleAdvancedReportClick = (item: ReportItem, index: number) => {
             <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:gap-8">
               <!-- Reportes básicos -->
               <div>
-                <h3 class="mb-2 text-base font-bold text-[#1364B3] sm:text-lg">
+                <h3 class="mb-2 text-base font-bold text-blue-500 sm:text-lg">
                   Basic reports include
                 </h3>
                 <p class="mb-3 text-xs text-gray-600 sm:text-sm xl:mb-4">
@@ -84,7 +84,7 @@ const handleAdvancedReportClick = (item: ReportItem, index: number) => {
                     class="flex cursor-pointer items-center pl-2 text-sm text-gray-700 sm:text-base"
                     @click="handleBasicReportClick(item, index)"
                   >
-                    <span class="mr-3 text-[#1364B3]">✓</span>
+                    <span class="mr-3 text-blue-500">✓</span>
                     {{ item.text }}
                   </li>
                 </ul>
@@ -92,7 +92,7 @@ const handleAdvancedReportClick = (item: ReportItem, index: number) => {
 
               <!-- Reportes avanzados -->
               <div>
-                <h3 class="mb-2 text-base font-bold text-[#1364B3] sm:text-lg">
+                <h3 class="mb-2 text-base font-bold text-blue-500 sm:text-lg">
                   Advanced reports include
                 </h3>
                 <p class="mb-3 text-xs text-gray-600 sm:text-sm xl:mb-4">
@@ -105,7 +105,7 @@ const handleAdvancedReportClick = (item: ReportItem, index: number) => {
                     class="flex cursor-pointer items-center pl-2 text-sm text-gray-700 sm:text-base"
                     @click="handleAdvancedReportClick(item, index)"
                   >
-                    <span class="mr-3 text-[#1364B3]">✓</span>
+                    <span class="mr-3 text-blue-500">✓</span>
                     {{ item.text }}
                   </li>
                 </ul>

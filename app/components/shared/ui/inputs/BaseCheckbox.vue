@@ -133,7 +133,7 @@ const checkboxIconClasses = computed(() => {
           v-if="currentValue"
           :class="[
             'h-5 w-5',
-            props.variant === 'dark' || props.variant === 'white' ? 'text-[#1364B3]' : 'text-white',
+            props.variant === 'dark' || props.variant === 'white' ? 'text-blue-500' : 'text-white',
           ]"
           fill="currentColor"
           viewBox="0 0 20 20"

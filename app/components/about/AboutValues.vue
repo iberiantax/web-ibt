@@ -39,7 +39,7 @@ const values = [
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
       <!-- Título principal -->
       <div class="mb-12 text-start">
-        <h2 class="text-3xl font-bold text-[#1364B3] lg:text-4xl">Who we are</h2>
+        <h2 class="text-3xl font-bold text-blue-500 lg:text-4xl">Who we are</h2>
       </div>
 
       <!-- Dos bloques en fila -->
@@ -81,8 +81,8 @@ const values = [
         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-1">
           <div v-for="value in values" :key="value.title" class="space-y-4">
             <div class="flex items-center space-x-3">
-              <component :is="value.icon" class="h-6 w-6 text-[#1364B3]" aria-hidden="true" />
-              <h3 class="text-md font-semibold text-[#1364B3]">
+              <component :is="value.icon" class="h-6 w-6 text-blue-500" aria-hidden="true" />
+              <h3 class="text-md font-semibold text-blue-500">
                 {{ value.title }}
               </h3>
             </div>

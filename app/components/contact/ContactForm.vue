@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { BaseForm, BaseSection } from '~/components/shared/ui';
+import { BaseForm, PageTitle } from '~/components/shared/ui';
 </script>
 
 <template>
   <section class="pb-16">
     <div class="mx-auto px-4 sm:px-6 lg:px-8">
-      <BaseSection
+      <PageTitle
         title="Contact us"
         description="Please complete the form below and we will endeavour to respond to you enquiry within 48 hours."
       />

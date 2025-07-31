@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ArrowRight, ChevronDown, Menu, X } from 'lucide-vue-next';
 import BaseButton from '~/components/shared/ui/buttons/BaseButton.vue';
-import Logo from '~/components/shared/logos/logo.vue';
+import ColorLogo from '~/components/shared/logos/ColorLogo.vue';
 
 // Estado para dropdowns y menú móvil
 const isServicesOpen = ref(false);
@@ -75,7 +75,7 @@ onMounted(() => {
         <!-- Logo - Izquierda -->
         <div class="flex-shrink-0">
           <NuxtLink to="/" class="flex items-center">
-            <Logo width="200" height="26" />
+            <color-logo width="200" height="26" />
           </NuxtLink>
         </div>
 
@@ -86,7 +86,7 @@ onMounted(() => {
             <!-- About -->
             <NuxtLink
               to="/about"
-              class="text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-[#1364B3]"
+              class="text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-blue-500"
             >
               About
             </NuxtLink>
@@ -94,7 +94,7 @@ onMounted(() => {
             <!-- Pricing -->
             <NuxtLink
               to="/pricing"
-              class="text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-[#1364B3]"
+              class="text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-blue-500"
             >
               Pricing
             </NuxtLink>
@@ -108,7 +108,7 @@ onMounted(() => {
                     isServicesOpen = !isServicesOpen;
                   }
                 "
-                class="flex items-center text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-[#1364B3]"
+                class="flex items-center text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-blue-500"
               >
                 Services
                 <ChevronDown class="ml-1 h-4 w-4" />
@@ -128,19 +128,19 @@ onMounted(() => {
                     <div class="space-y-2">
                       <NuxtLink
                         to="/services/tax-returns"
-                        class="block text-base leading-6 text-neutral-700 hover:text-[#1364B3]"
+                        class="block text-base leading-6 text-neutral-700 hover:text-blue-500"
                       >
                         Tax Returns
                       </NuxtLink>
                       <NuxtLink
                         to="/services/consulting"
-                        class="block text-base leading-6 text-neutral-700 hover:text-[#1364B3]"
+                        class="block text-base leading-6 text-neutral-700 hover:text-blue-500"
                       >
                         Consulting
                       </NuxtLink>
                       <NuxtLink
                         to="/services/planning"
-                        class="block text-base leading-6 text-neutral-700 hover:text-[#1364B3]"
+                        class="block text-base leading-6 text-neutral-700 hover:text-blue-500"
                       >
                         Tax Planning
                       </NuxtLink>
@@ -156,19 +156,19 @@ onMounted(() => {
                     <div class="space-y-2">
                       <NuxtLink
                         to="/services/individual"
-                        class="block text-base leading-6 text-neutral-700 hover:text-[#1364B3]"
+                        class="block text-base leading-6 text-neutral-700 hover:text-blue-500"
                       >
                         Individual
                       </NuxtLink>
                       <NuxtLink
                         to="/services/business"
-                        class="block text-base leading-6 text-neutral-700 hover:text-[#1364B3]"
+                        class="block text-base leading-6 text-neutral-700 hover:text-blue-500"
                       >
                         Business
                       </NuxtLink>
                       <NuxtLink
                         to="/services/international"
-                        class="block text-base leading-6 text-neutral-700 hover:text-[#1364B3]"
+                        class="block text-base leading-6 text-neutral-700 hover:text-blue-500"
                       >
                         International
                       </NuxtLink>
@@ -187,7 +187,7 @@ onMounted(() => {
                     isResourcesOpen = !isResourcesOpen;
                   }
                 "
-                class="flex items-center text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-[#1364B3]"
+                class="flex items-center text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-blue-500"
               >
                 Resources
                 <ChevronDown class="ml-1 h-4 w-4" />
@@ -199,19 +199,19 @@ onMounted(() => {
               >
                 <NuxtLink
                   to="/resources/guides"
-                  class="block px-4 py-2 text-base leading-6 text-neutral-700 hover:bg-neutral-50 hover:text-[#1364B3]"
+                  class="block px-4 py-2 text-base leading-6 text-neutral-700 hover:bg-neutral-50 hover:text-blue-500"
                 >
                   Tax Guides
                 </NuxtLink>
                 <NuxtLink
                   to="/resources/calculators"
-                  class="block px-4 py-2 text-base leading-6 text-neutral-700 hover:bg-neutral-50 hover:text-[#1364B3]"
+                  class="block px-4 py-2 text-base leading-6 text-neutral-700 hover:bg-neutral-50 hover:text-blue-500"
                 >
                   Calculators
                 </NuxtLink>
                 <NuxtLink
                   to="/resources/blog"
-                  class="block px-4 py-2 text-base leading-6 text-neutral-700 hover:bg-neutral-50 hover:text-[#1364B3]"
+                  class="block px-4 py-2 text-base leading-6 text-neutral-700 hover:bg-neutral-50 hover:text-blue-500"
                 >
                   Blog
                 </NuxtLink>
@@ -227,7 +227,7 @@ onMounted(() => {
                     isLanguageOpen = !isLanguageOpen;
                   }
                 "
-                class="flex items-center text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-[#1364B3]"
+                class="flex items-center text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-blue-500"
               >
                 EN
                 <ChevronDown class="ml-1 h-4 w-4" />
@@ -238,12 +238,12 @@ onMounted(() => {
                 class="absolute left-0 top-full mt-2 w-24 rounded-lg border border-neutral-200 bg-white py-2 shadow-elevation-2"
               >
                 <button
-                  class="block w-full px-4 py-2 text-left text-base leading-6 text-neutral-700 hover:bg-neutral-50 hover:text-[#1364B3]"
+                  class="block w-full px-4 py-2 text-left text-base leading-6 text-neutral-700 hover:bg-neutral-50 hover:text-blue-500"
                 >
                   EN
                 </button>
                 <button
-                  class="block w-full px-4 py-2 text-left text-base leading-6 text-neutral-700 hover:bg-neutral-50 hover:text-[#1364B3]"
+                  class="block w-full px-4 py-2 text-left text-base leading-6 text-neutral-700 hover:bg-neutral-50 hover:text-blue-500"
                 >
                   ES
                 </button>
@@ -265,7 +265,7 @@ onMounted(() => {
         <div class="lg:hidden">
           <button
             @click="toggleMobileMenu"
-            class="rounded-lg p-2 text-neutral-700 transition-colors duration-200 hover:bg-neutral-100 hover:text-[#1364B3]"
+            class="rounded-lg p-2 text-neutral-700 transition-colors duration-200 hover:bg-neutral-100 hover:text-blue-500"
           >
             <Menu v-if="!isMobileMenuOpen" class="h-6 w-6" />
             <X v-else class="h-6 w-6" />
@@ -282,14 +282,14 @@ onMounted(() => {
             <div class="space-y-4">
               <NuxtLink
                 to="/about"
-                class="block text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-[#1364B3]"
+                class="block text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-blue-500"
                 @click="toggleMobileMenu"
               >
                 About
               </NuxtLink>
               <NuxtLink
                 to="/pricing"
-                class="block text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-[#1364B3]"
+                class="block text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-blue-500"
                 @click="toggleMobileMenu"
               >
                 Pricing
@@ -305,7 +305,7 @@ onMounted(() => {
                     isMobileServicesOpen = !isMobileServicesOpen;
                   }
                 "
-                class="flex w-full items-center justify-between text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-[#1364B3]"
+                class="flex w-full items-center justify-between text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-blue-500"
               >
                 <span>Services</span>
                 <ChevronDown
@@ -321,21 +321,21 @@ onMounted(() => {
                   <div class="space-y-2">
                     <NuxtLink
                       to="/services/tax-returns"
-                      class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
+                      class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-blue-500"
                       @click="toggleMobileMenu"
                     >
                       Tax Returns
                     </NuxtLink>
                     <NuxtLink
                       to="/services/consulting"
-                      class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
+                      class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-blue-500"
                       @click="toggleMobileMenu"
                     >
                       Consulting
                     </NuxtLink>
                     <NuxtLink
                       to="/services/planning"
-                      class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
+                      class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-blue-500"
                       @click="toggleMobileMenu"
                     >
                       Tax Planning
@@ -350,21 +350,21 @@ onMounted(() => {
                   <div class="space-y-2">
                     <NuxtLink
                       to="/services/individual"
-                      class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
+                      class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-blue-500"
                       @click="toggleMobileMenu"
                     >
                       Individual
                     </NuxtLink>
                     <NuxtLink
                       to="/services/business"
-                      class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
+                      class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-blue-500"
                       @click="toggleMobileMenu"
                     >
                       Business
                     </NuxtLink>
                     <NuxtLink
                       to="/services/international"
-                      class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
+                      class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-blue-500"
                       @click="toggleMobileMenu"
                     >
                       International
@@ -383,7 +383,7 @@ onMounted(() => {
                     isMobileResourcesOpen = !isMobileResourcesOpen;
                   }
                 "
-                class="flex w-full items-center justify-between text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-[#1364B3]"
+                class="flex w-full items-center justify-between text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-blue-500"
               >
                 <span>Resources</span>
                 <ChevronDown
@@ -394,21 +394,21 @@ onMounted(() => {
               <div v-if="isMobileResourcesOpen" class="space-y-2 pl-4">
                 <NuxtLink
                   to="/resources/guides"
-                  class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
+                  class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-blue-500"
                   @click="toggleMobileMenu"
                 >
                   Tax Guides
                 </NuxtLink>
                 <NuxtLink
                   to="/resources/calculators"
-                  class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
+                  class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-blue-500"
                   @click="toggleMobileMenu"
                 >
                   Calculators
                 </NuxtLink>
                 <NuxtLink
                   to="/resources/blog"
-                  class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
+                  class="block text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-blue-500"
                   @click="toggleMobileMenu"
                 >
                   Blog
@@ -425,7 +425,7 @@ onMounted(() => {
                     isMobileLanguageOpen = !isMobileLanguageOpen;
                   }
                 "
-                class="flex w-full items-center justify-between text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-[#1364B3]"
+                class="flex w-full items-center justify-between text-base font-normal leading-6 text-neutral-700 transition-colors duration-200 hover:text-blue-500"
               >
                 <span>Language</span>
                 <ChevronDown
@@ -435,12 +435,12 @@ onMounted(() => {
               </button>
               <div v-if="isMobileLanguageOpen" class="space-y-2 pl-4">
                 <button
-                  class="block w-full text-left text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
+                  class="block w-full text-left text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-blue-500"
                 >
                   EN
                 </button>
                 <button
-                  class="block w-full text-left text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-[#1364B3]"
+                  class="block w-full text-left text-base leading-6 text-neutral-600 transition-colors duration-200 hover:text-blue-500"
                 >
                   ES
                 </button>

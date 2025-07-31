@@ -13,7 +13,7 @@ defineOptions({
       <div class="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
         <!-- Sección izquierda - Título -->
         <div class="space-y-6">
-          <h1 class="text-4xl font-bold leading-tight text-[#1364B3] md:text-5xl lg:text-5xl">
+          <h1 class="text-4xl font-bold leading-tight text-blue-500 md:text-5xl lg:text-5xl">
             Form 210 - Rental Income
           </h1>
         </div>

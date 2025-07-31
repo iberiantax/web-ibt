@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BaseCard, BaseSection } from '~/components/shared/ui';
+import { BaseCardFull, PageTitle } from '~/components/shared/ui';
 
 defineOptions({
   name: 'BlogIndexPage',
@@ -7,10 +7,10 @@ defineOptions({
 </script>
 
 <template>
-  <BaseSection title="Blog" description="Stay up to date on non-resident taxes in Spain." />
+  <PageTitle title="Blog" description="Stay up to date on non-resident taxes in Spain." />
 
   <div class="mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-3 gap-10 ">
-    <BaseCard
+    <BaseCardFull
       image="/images/hero/FrameHero.png"
       type="blog"
       title="Municipal Capital Gains tax in Spain for non-resident"
@@ -18,7 +18,7 @@ defineOptions({
       buttonText="Read more"
       buttonVariant="primary"
     />
-    <BaseCard
+    <BaseCardFull
       image="/images/hero/FrameHero.png"
       type="blog"
       title="Municipal Capital Gains tax in Spain for non-resident"
@@ -26,7 +26,7 @@ defineOptions({
       buttonText="Read more"
       buttonVariant="primary"
     />
-    <BaseCard
+    <BaseCardFull
       image="/images/hero/FrameHero.png"
       type="blog"
       title="Municipal Capital Gains tax in Spain for non-resident"
@@ -34,7 +34,7 @@ defineOptions({
       buttonText="Read more"
       buttonVariant="primary"
     />
-    <BaseCard
+    <BaseCardFull
       image="/images/hero/FrameHero.png"
       type="blog"
       title="Municipal Capital Gains tax in Spain for non-resident"
@@ -42,7 +42,7 @@ defineOptions({
       buttonText="Read more"
       buttonVariant="primary"
     />
-    <BaseCard
+    <BaseCardFull
       image="/images/hero/FrameHero.png"
       type="blog"
       title="Municipal Capital Gains tax in Spain for non-resident"
@@ -50,7 +50,7 @@ defineOptions({
       buttonText="Read more"
       buttonVariant="primary"
     />
-    <BaseCard
+    <BaseCardFull
       image="/images/hero/FrameHero.png"
       type="blog"
       title="Municipal Capital Gains tax in Spain for non-resident"

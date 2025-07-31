@@ -46,7 +46,7 @@ const handleCardClick = (index: number, event: MouseEvent) => {
     <div class="mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Título de la sección -->
       <div class="mb-12 text-center">
-        <h2 class="text-3xl font-bold text-[#1364B3] lg:text-4xl">
+        <h2 class="text-3xl font-bold text-blue-500 lg:text-4xl">
           Trust that your non-resident taxes are accurate
         </h2>
       </div>
@@ -63,12 +63,12 @@ const handleCardClick = (index: number, event: MouseEvent) => {
           >
             <!-- Icono -->
             <div class="mb-4 flex justify-start">
-              <Check v-if="feature.icon === 'check'" class="h-10 w-10 text-[#1364B3]" />
+              <Check v-if="feature.icon === 'check'" class="h-10 w-10 text-blue-500" />
               <img v-else :src="feature.icon" :alt="feature.title" class="h-10 w-10" />
             </div>
 
             <!-- Título -->
-            <h3 class="mb-3 text-start text-[28px] font-bold text-[#1364B3]">
+            <h3 class="mb-3 text-start text-[28px] font-bold text-blue-500">
               {{ feature.title }}
             </h3>
 

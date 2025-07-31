@@ -1021,14 +1021,14 @@
           <div class="mb-6">
             <h4 class="mb-2 text-lg font-medium">Default Type</h4>
             <div class="flex flex-wrap gap-4">
-              <BaseCard
+              <BaseCardFull
                 type="default-white"
                 title="Annual Tax Calculator"
                 description="Own a property in Spain? Use our tax tool to calculate how much you have to pay in your annual non-resident tax return in Spain."
                 buttonText="Try now"
                 buttonVariant="outline"
               />
-              <BaseCard
+              <BaseCardFull
                 type="default"
                 title="Imputed income"
                 description="Standard income tax declaration for non-resident property owners in Spain."
@@ -1041,7 +1041,7 @@
           <!-- Blog Type -->
           <div class="mb-6">
             <h4 class="mb-2 text-lg font-medium">Blog Type</h4>
-            <BaseCard
+            <BaseCardFull
               type="blog"
               title="Title"
               description="Text"
@@ -1053,7 +1053,7 @@
           <!-- Case Studies Type -->
           <div class="mb-6">
             <h4 class="mb-2 text-lg font-medium">Case Studies Type</h4>
-            <BaseCard
+            <BaseCardFull
               type="case-studies"
               title="Title"
               :financialData="{
@@ -1074,7 +1074,7 @@
           <!-- Review Type -->
           <div class="mb-6">
             <h4 class="mb-2 text-lg font-medium">Review Type</h4>
-            <BaseCard
+            <BaseCardFull
               type="review"
               description="I have previously used other people to file my taxes in Spain, however they have made errors..."
               reviewerName="Name Surname"
@@ -1085,7 +1085,7 @@
           <!-- Pricing Type -->
           <div class="mb-6">
             <h4 class="mb-2 text-lg font-medium">Pricing Type</h4>
-            <BaseCard
+            <BaseCardFull
               type="pricing"
               subtitle="Subtitle"
               price="Title"
@@ -1222,7 +1222,7 @@
           </h3>
           <div class="mx-auto max-w-2xl">
             <div class="rounded-lg border border-neutral-200 bg-white p-8">
-              <h2 class="mb-4 text-2xl font-bold text-[#1364B3]">When do I need it?</h2>
+              <h2 class="mb-4 text-2xl font-bold text-blue-500">When do I need it?</h2>
               <p class="mb-6 text-base text-neutral-700">
                 You will need this certificate in various situations where you must officially
                 communicate with government agencies, companies, or other entities, such as:
@@ -1369,7 +1369,7 @@ import {
   BaseCheckbox,
   BaseLink,
   BaseSegmentedControl,
-  BaseCard,
+  BaseCardFull,
   BaseBanner,
   BaseStepperVertical,
   BaseStepperHorizontal,

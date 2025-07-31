@@ -9,7 +9,7 @@ defineOptions({
     <div class="mx-auto px-4 py-12 sm:px-6 lg:px-8">
       <div class="grid items-center gap-8 md:grid-cols-2 lg:gap-12">
         <div class="space-y-4">
-          <h1 class="text-[48px] font-bold leading-tight text-[#1364B3]">We make it easy</h1>
+          <h1 class="text-[48px] font-bold leading-tight text-blue-500">We make it easy</h1>
 
           <p class="text-lg leading-relaxed">
             IberianTax was founded in 2020 with one mission: to make taxes less stressful and more

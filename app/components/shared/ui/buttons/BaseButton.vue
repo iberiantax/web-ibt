@@ -19,7 +19,6 @@ const props = withDefaults(defineProps<Props>(), {
   loading: false,
 });
 
-// Clases dinámicas basadas en las props
 const buttonClasses = computed(() => {
   const baseClasses = [
     'inline-flex items-center justify-center font-normal transition-all duration-200 focus:outline-none focus:ring-[0.8px] rounded-[12px]',
@@ -38,9 +37,9 @@ const buttonClasses = computed(() => {
   const variantClasses = {
     primary: 'bg-[#1364B3] text-white hover:bg-[#0f4d8a] focus:ring-[#1364B3]',
     secondary:
-      'bg-white text-[#1364B3] border border-[#1364B3] hover:bg-blue-50 focus:ring-[#1364B3]',
+      'bg-white text-blue-500 border border-[#1364B3] hover:bg-blue-50 focus:ring-[#1364B3]',
     tertiary: 'bg-gray-100 text-gray-700 hover:bg-gray-200 focus:ring-gray-500',
-    ghost: 'text-[#1364B3] border border-[#1364B3] hover:bg-blue-50 focus:ring-[#1364B3]',
+    ghost: 'text-blue-500 border border-[#1364B3] hover:bg-blue-50 focus:ring-[#1364B3]',
     outline:
       'bg-transparent text-gray-700 border border-gray-900 hover:bg-gray-50 focus:ring-gray-500',
   };

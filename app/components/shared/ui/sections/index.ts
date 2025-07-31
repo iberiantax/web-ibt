@@ -1,1 +1,1 @@
-export { default as BaseSection } from './BaseSection.vue';
+export { default as PageTitle } from './PageTitle.vue';

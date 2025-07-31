@@ -70,7 +70,7 @@ const handleButtonClick = (event: MouseEvent) => {
       <!-- Contenido de texto -->
       <div class="flex-1 text-center sm:mx-6 sm:text-left">
         <h3
-          class="mb-2 font-bold text-[#1364B3]"
+          class="mb-2 font-bold text-blue-500"
           :class="showDescription ? 'text-lg sm:text-2xl' : 'text-xl sm:text-3xl'"
         >
           {{ title }}

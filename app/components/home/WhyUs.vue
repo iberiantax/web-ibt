@@ -60,7 +60,7 @@ const handleCardClick = (index: number, event: MouseEvent) => {
     <div class="mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Título de la sección -->
       <div class="mb-12 text-center">
-        <h2 class="text-3xl font-bold text-[#1364B3] lg:text-4xl">Why us?</h2>
+        <h2 class="text-3xl font-bold text-blue-500 lg:text-4xl">Why us?</h2>
       </div>
 
       <!-- Grid de cards -->

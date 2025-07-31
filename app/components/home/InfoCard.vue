@@ -34,7 +34,7 @@ const handleButtonClick = (event: MouseEvent) => {
         <div class="w-full max-w-4xl rounded-lg p-12 text-center" :class="backgroundColor">
           <!-- Título -->
           <h2
-            class="mb-2 text-3xl font-bold leading-[48px] tracking-[0%] text-[#1364B3] lg:text-[40px]"
+            class="mb-2 text-3xl font-bold leading-[48px] tracking-[0%] text-blue-500 lg:text-[40px]"
           >
             {{ title }}
           </h2>

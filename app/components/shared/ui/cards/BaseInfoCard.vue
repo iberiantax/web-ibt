@@ -27,7 +27,7 @@ const handleButtonClick = (event: MouseEvent) => {
     <div class="flex flex-col items-center gap-6 md:flex-row md:gap-8">
       <!-- Contenido de texto -->
       <div class="flex-1 text-center md:text-left">
-        <h2 class="mb-4 text-2xl font-bold text-[#1364B3] md:text-3xl lg:text-4xl">
+        <h2 class="mb-4 text-2xl font-bold text-blue-500 md:text-3xl lg:text-4xl">
           {{ title }}
         </h2>
         <p class="mb-6 text-sm text-gray-700 md:text-base">
@@ -35,7 +35,7 @@ const handleButtonClick = (event: MouseEvent) => {
         </p>
         <button
           @click="handleButtonClick"
-          class="rounded-lg border border-[#1364B3] bg-transparent px-6 py-3 text-sm font-medium text-[#1364B3] transition-colors hover:bg-[#1364B3] hover:text-white md:text-base"
+          class="rounded-lg border border-[#1364B3] bg-transparent px-6 py-3 text-sm font-medium text-blue-500 transition-colors hover:bg-[#1364B3] hover:text-white md:text-base"
         >
           {{ buttonText }}
         </button>

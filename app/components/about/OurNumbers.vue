@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Flag } from "lucide-vue-next";
 
 interface Feature {
   icon: string;
@@ -60,7 +59,7 @@ const handleCardClick = (index: number, event: MouseEvent) => {
     <div class=" mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Título de la sección -->
       <div class="mb-12 text-center">
-        <h2 class="text-3xl font-bold text-[#1364B3] lg:text-4xl">Our Numbers</h2>
+        <h2 class="text-3xl font-bold text-blue-500 lg:text-4xl">Our Numbers</h2>
       </div>
 
       <!-- Grid de cards -->
@@ -78,7 +77,7 @@ const handleCardClick = (index: number, event: MouseEvent) => {
           </div>
 
           <!-- Título -->
-          <h3 class="mb-4 text-start text-[28px] font-bold text-[#1364B3]">
+          <h3 class="mb-4 text-start text-[28px] font-bold text-blue-500">
             {{ feature.title }}
           </h3>
 

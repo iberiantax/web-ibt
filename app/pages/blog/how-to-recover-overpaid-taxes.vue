@@ -3,7 +3,7 @@
     <!-- Header -->
     <div>
       <div class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
-        <h1 class="mb-4 text-4xl font-bold text-[#1364B3] lg:text-5xl">
+        <h1 class="mb-4 text-4xl font-bold text-blue-500 lg:text-5xl">
           How to recover overpaid taxes from the spanish tax office
         </h1>
         <p class="text-base font-bold">November 28, 2024</p>
@@ -34,7 +34,7 @@
 
       <!-- Common Reasons Section -->
       <div class="mb-12">
-        <h2 class="mb-6 text-3xl font-bold text-[#1364B3]">Common Reasons for Overpaid Taxes</h2>
+        <h2 class="mb-6 text-3xl font-bold text-blue-500">Common Reasons for Overpaid Taxes</h2>
         <p class="mb-6 text-lg text-gray-700">
           Overpayments usually result from mistakes or misunderstandings in the tax calculation
           process. Here are the most common scenarios:
@@ -90,14 +90,14 @@
 
       <!-- Process Section -->
       <div class="mb-12">
-        <h2 class="mb-6 text-3xl font-bold text-[#1364B3]">
+        <h2 class="mb-6 text-3xl font-bold text-blue-500">
           The Process to Recover Overpaid Taxes
         </h2>
 
         <div class="space-y-8">
           <!-- Step 1 -->
           <div>
-            <h3 class="mb-4 text-xl font-bold text-[#1364B3]">Step 1: Prepare a Formal Request</h3>
+            <h3 class="mb-4 text-xl font-bold text-blue-500">Step 1: Prepare a Formal Request</h3>
             <p class="mb-4 text-gray-700">
               Your request should include detailed information about the overpayment:
             </p>
@@ -111,7 +111,7 @@
 
           <!-- Step 2 -->
           <div>
-            <h3 class="mb-4 text-xl font-bold text-[#1364B3]">
+            <h3 class="mb-4 text-xl font-bold text-blue-500">
               Step 2: Provide Supporting Evidence
             </h3>
             <p class="mb-4 text-gray-700">
@@ -127,7 +127,7 @@
 
           <!-- Step 3 -->
           <div>
-            <h3 class="mb-4 text-xl font-bold text-[#1364B3]">
+            <h3 class="mb-4 text-xl font-bold text-blue-500">
               Step 3: Include Bank Account Information
             </h3>
             <p class="text-gray-700">
@@ -139,7 +139,7 @@
 
           <!-- Step 4 -->
           <div>
-            <h3 class="mb-4 text-xl font-bold text-[#1364B3]">Step 4: Submit the Request</h3>
+            <h3 class="mb-4 text-xl font-bold text-blue-500">Step 4: Submit the Request</h3>
             <p class="text-gray-700">
               Submit your request through the Spanish tax office's electronic system. Note that this
               requires an electronic certificate, which can be complex for non-residents to obtain
@@ -149,7 +149,7 @@
 
           <!-- Step 5 -->
           <div>
-            <h3 class="mb-4 text-xl font-bold text-[#1364B3]">Step 5: Await Resolution</h3>
+            <h3 class="mb-4 text-xl font-bold text-blue-500">Step 5: Await Resolution</h3>
             <p class="text-gray-700">
               The tax office will review your request and supporting documentation. This process can
               take several months, and they may request additional information or clarification
@@ -161,7 +161,7 @@
 
       <!-- Future Changes Section -->
       <div class="mb-12">
-        <h2 class="mb-6 text-3xl font-bold text-[#1364B3]">Future Changes to Simplify Refunds</h2>
+        <h2 class="mb-6 text-3xl font-bold text-blue-500">Future Changes to Simplify Refunds</h2>
 
         <div>
           <p class="mb-6 text-lg text-gray-700">

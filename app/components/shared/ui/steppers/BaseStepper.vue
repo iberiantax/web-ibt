@@ -1,21 +1,13 @@
 <script setup lang="ts">
-interface Step {
-  number: number;
-  time: string;
-  title: string;
-  description: string;
-  image?: string;
-  imageAlt?: string;
-}
+
+import type {Step} from "~/interfaces/step.interface";
 
 interface Props {
   steps: Step[];
-  title?: string;
   showCheckmark?: boolean;
 }
 
 withDefaults(defineProps<Props>(), {
-  title: 'How it works?',
   showCheckmark: true,
 });
 
@@ -29,23 +21,9 @@ const handleStepClick = (stepIndex: number, event: MouseEvent) => {
 </script>
 
 <template>
-  <section class="bg-neutral-100 py-8">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Título de la sección -->
-      <div class="mb-12 text-center">
-        <h2 class="text-3xl font-bold text-[#1364B3] lg:text-4xl">
-          {{ title }}
-        </h2>
-      </div>
+  <div class="relative mx-auto max-w-4xl">
+        <div class="absolute bottom-0 left-0 top-0 w-1 bg-[#1364B3] l:left-1/2 l:-translate-x-1/2 l:transform"></div>
 
-      <!-- Timeline vertical centrado -->
-      <div class="relative mx-auto max-w-4xl">
-        <!-- Línea vertical del timeline (siempre a la izquierda hasta 1201px) -->
-        <div
-          class="absolute bottom-0 left-0 top-0 w-1 bg-[#1364B3] l:left-1/2 l:-translate-x-1/2 l:transform"
-        ></div>
-
-        <!-- Pasos -->
         <div class="space-y-16">
           <div
             v-for="(step, index) in steps"
@@ -53,16 +31,13 @@ const handleStepClick = (stepIndex: number, event: MouseEvent) => {
             class="relative flex items-center"
             @click="handleStepClick(index, $event)"
           >
-            <!-- Nodo del timeline (siempre a la izquierda hasta 1201px) -->
             <div
               class="absolute left-0 z-10 flex h-[50px] w-[50px] -translate-x-1/2 transform items-center justify-center rounded-full bg-[#1364B3] l:left-1/2"
             >
               <span class="text-2xl font-bold leading-none text-white">{{ step.number }}</span>
             </div>
 
-            <!-- Contenido del paso -->
             <div class="grid w-full grid-cols-1 items-center gap-28 l:grid-cols-2">
-              <!-- Imagen a la izquierda (oculta hasta 1201px) -->
               <div
                 class="hidden h-[320px] w-[412px] items-center justify-center rounded-lg bg-gray-200 l:flex"
               >
@@ -75,9 +50,7 @@ const handleStepClick = (stepIndex: number, event: MouseEvent) => {
                 </div>
               </div>
 
-              <!-- Contenido a la derecha (siempre ocupa todo el ancho hasta 1201px) -->
               <div class="col-span-full ml-16 space-y-3 l:col-span-1 l:ml-0">
-                <!-- Tiempo -->
                 <div class="flex items-center space-x-2">
                   <svg
                     class="h-4 w-4 text-gray-500"
@@ -95,12 +68,10 @@ const handleStepClick = (stepIndex: number, event: MouseEvent) => {
                   <span class="text-base">{{ step.time }}</span>
                 </div>
 
-                <!-- Título -->
-                <h3 class="text-xl font-bold text-[#1364B3]">
+                <h3 class="text-xl font-bold text-blue-500">
                   {{ step.title }}
                 </h3>
 
-                <!-- Descripción -->
                 <p class="text-base leading-relaxed text-gray-700">
                   {{ step.description }}
                 </p>
@@ -108,11 +79,8 @@ const handleStepClick = (stepIndex: number, event: MouseEvent) => {
             </div>
           </div>
 
-          <!-- Checkmark final -->
           <div v-if="showCheckmark" class="relative flex items-center">
-            <div
-              class="absolute left-0 z-10 flex h-[50px] w-[50px] -translate-x-1/2 transform items-center justify-center rounded-full bg-[#1364B3] l:left-1/2"
-            >
+            <div class="absolute left-0 z-10 flex h-[50px] w-[50px] -translate-x-1/2 transform items-center justify-center rounded-full bg-[#1364B3] l:left-1/2">
               <svg class="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path
                   fill-rule="evenodd"
@@ -124,6 +92,4 @@ const handleStepClick = (stepIndex: number, event: MouseEvent) => {
           </div>
         </div>
       </div>
-    </div>
-  </section>
 </template>

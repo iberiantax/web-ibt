@@ -24,7 +24,7 @@ defineOptions({
       <!-- Contenido de texto - Parte inferior -->
       <div class="text-start">
         <!-- Título principal -->
-        <h1 class="mb-4 text-4xl font-bold leading-tight text-[#1364B3] md:text-5xl">
+        <h1 class="mb-4 text-4xl font-bold leading-tight text-blue-500 md:text-5xl">
           Recommend our tax filing software and earn 10 €
         </h1>
 
